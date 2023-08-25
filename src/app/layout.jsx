@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${YesevaOne.variable} ${PlusJakarta.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main className="min-h-[80vh]">{children}</main>
         <Footer />
       </body>
     </html>

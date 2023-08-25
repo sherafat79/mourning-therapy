@@ -19,7 +19,7 @@ function Expect() {
             className="w-full h-full"
           />
         </div>
-        <div className="text-black w-3/4 ">
+        <div className="text-black w-1/2 ">
           <h4 className="font-Yeseva font-normal  text-2xl mb-7 ">
             Journey Towards Healing
           </h4>

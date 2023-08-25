@@ -16,7 +16,7 @@ function Header() {
           </Link>
           <Link
             className="text-sm text-black font-semibold leading-7 capitalize "
-            href="/"
+            href="/about"
           >
             ABOUT ME
           </Link>
