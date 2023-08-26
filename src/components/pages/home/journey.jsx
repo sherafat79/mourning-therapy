@@ -12,7 +12,7 @@ function Journey() {
       </h2>
       <div className="flex items-center gap-20 justify-center mt-16 w-4/6 mx-auto">
         <JourneyCard />
-        <div class="border-l h-[200px] border-opacity-25  border-black"></div>
+        <div className="border-l h-[200px] border-opacity-25  border-black"></div>
         <JourneyCard />
       </div>
     </section>

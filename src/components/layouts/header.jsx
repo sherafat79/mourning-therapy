@@ -33,7 +33,7 @@ function Header() {
         <div className=" flex justify-center items-center  gap-16  h-full font-jakarta">
           <Link
             className="text-sm text-black  font-semibold leading-7 capitalize "
-            href="/"
+            href="/services"
           >
             SERVICES
           </Link>

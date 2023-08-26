@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/containers/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -14,6 +14,9 @@ module.exports = {
       white: "#ffffff",
       cardbg: "#D4B2A8",
       darkBrown: "#736A5D",
+      line: "#DBC1B5",
+
+      side: "#F9EEE5",
     },
     fontFamily: {
       Yeseva: ["var(--font-yeseva-one)"],

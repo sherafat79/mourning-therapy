@@ -20,6 +20,9 @@
 .footer-bg {
   background-image: url("../assets/images/backgrounds/footer.svg");
 }
+.service-container {
+  min-height: calc(100vh - theme("spacing.20"));
+}
 .text-bg {
   background: linear-gradient(
     90deg,
