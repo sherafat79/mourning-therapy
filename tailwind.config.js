@@ -15,8 +15,10 @@ module.exports = {
       cardbg: "#D4B2A8",
       darkBrown: "#736A5D",
       line: "#DBC1B5",
-
+      textWhite: "#F8F8F8",
       side: "#F9EEE5",
+      gray: "#D9D9D9",
+      textmuted: "#51575D",
     },
     fontFamily: {
       Yeseva: ["var(--font-yeseva-one)"],

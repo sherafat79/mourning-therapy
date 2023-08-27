@@ -3,7 +3,7 @@ import React from "react";
 
 function Results() {
   return (
-    <section className="bg-5 bg-cover bg-center bg-no-repeat flex flex-row-reverse w-full px-80">
+    <section className="bg-5 bg-cover bg-cover bg-no-repeat flex flex-row-reverse w-full px-80">
       <div className="bg-milk bg-opacity-80 p-8  w-[20rem] text-black  backdrop-blur-[5.5px] ">
         <h2 className="font-Yeseva font-normal leading-9 text-xl text-darkBrown ">
           Guided by Results: Our Empowering Approach

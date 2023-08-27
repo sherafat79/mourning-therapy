@@ -8,7 +8,7 @@ function Info() {
         You are worthy of a life brimming with love, joy, and satisfaction. Our
         commitment is to guide you in discovering it.
       </h2>
-      <div className="bg-2 bg-cover bg-center bg-no-repeat w-full rounded    ">
+      <div className="bg-2 bg-cover bg-cover bg-no-repeat w-full rounded    ">
         <div className="w-2/5 text-bg  p-8">
           <h2 className="font-Yeseva text-2xl  text-left ">
             Mourning Therapy, led by Ariana Behravan, is Newport Beach's leading

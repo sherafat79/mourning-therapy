@@ -82,7 +82,7 @@ function ServicesContainer() {
             className="h-full w-full"
           />
         </div>
-        <div className=" p-20 flex font-jakarta text-xl   flex-col gap-8 ">
+        <div className=" p-20 flex font-jakarta text-xl leading-[2.5rem]  flex-col gap-11 ">
           <h1 className="text-[2rem] font-Yeseva">{activeTab.name}</h1>
           <RenderTabContent />
         </div>

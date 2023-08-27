@@ -3,7 +3,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <section className="bg-1 bg-cover bg-no-repeat flex justify-center items-center  bg-center h-[40rem]">
+    <section className="bg-1 bg-cover bg-no-repeat flex justify-center items-center  bg-cover h-[40rem]">
       <div className="bg-milk bg-opacity-80 p-11 w-[40rem] text-black  backdrop-blur-[5.5px] ">
         <h2 className="font-Yeseva font-normal leading-9 text-[2rem] ">
           Healing begins with you; embrace your journey and together, we'll
