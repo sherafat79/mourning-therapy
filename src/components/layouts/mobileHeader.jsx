@@ -27,7 +27,7 @@ function MobileHeader({ onClose, path }) {
         </div>
       </div>
       <div className="px-8 font-jakarta uppercase font-bold text-black text-xl">
-        <ul className="[&>li]:mb-6  animate__animated  animate__slideInDown">
+        <ul className="[&>li]:mb-6  ">
           <li>
             <Link
               onClick={onClose}
