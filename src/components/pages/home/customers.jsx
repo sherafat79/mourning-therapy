@@ -21,7 +21,7 @@ function Customers() {
   }, []);
   return (
     <section className="text-black">
-      <div className="flex items-center gap-20 justify-center h-full mt-16 md:w-[60%]  w-full  p-8 md:p-0 mx-auto">
+      <div className="flex items-center gap-20 justify-center h-full mt-16 md:w-[60%]  w-full  p-4 md:p-0 mx-auto">
         <button onClick={handleNext}>
           <Image
             src={leftIcon}
@@ -39,7 +39,7 @@ function Customers() {
           className="w-full"
           slidesPerView={1}
         >
-          <SwiperSlide className="w-36 h-36">
+          <SwiperSlide>
             <div className="text-center">
               <Image
                 src={defaultImage}
@@ -48,7 +48,7 @@ function Customers() {
                 alt="icon"
                 width={64}
               />
-              <h5 className="font-Yeseva text-2xl ">
+              <h5 className="font-Yeseva md:text-2xl text-sm ">
                 Working with Ariana Behravan has been life-changing; her
                 empathy, understanding, and guidance helped me navigate my
                 emotional challenges and transformed my life for the better.
@@ -58,7 +58,7 @@ function Customers() {
               </p>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="w-36 h-36">
+          <SwiperSlide>
             <div className="text-center">
               <Image
                 src={defaultImage}
@@ -67,7 +67,7 @@ function Customers() {
                 alt="icon"
                 width={64}
               />
-              <h5 className="font-Yeseva text-2xl ">
+              <h5 className="font-Yeseva md:text-2xl text-sm ">
                 Working with Ariana Behravan has been life-changing; her
                 empathy, understanding, and guidance helped me navigate my
                 emotional challenges and transformed my life for the better.

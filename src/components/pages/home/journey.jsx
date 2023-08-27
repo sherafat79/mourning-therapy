@@ -22,7 +22,7 @@ function Journey() {
         <div className="border-l h-[200px] hidden md:block border-opacity-25  border-black"></div>
         <JourneyCard
           icon={serviceIcon}
-          href="/service"
+          href="/services"
           title="Familiarize Yourself with Our Process"
           link="View Our Services"
           description="In your initial phone consultation, your therapist will address any queries you have and set up your inaugural session."
