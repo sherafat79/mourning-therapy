@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import bg from "@/assets/images/backgrounds/bg-3.png";
+import Link from "next/link";
 
 function OnlineTherapy() {
   return (
@@ -30,9 +31,12 @@ function OnlineTherapy() {
             to deliver profound assistance that meets your unique needs, all
             while prioritizing your comfort.
           </p>
-          <button className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold md:mt-48 text-sm rounded bg-brown flex justify-center items-center md:w-11/12 mt-8 w-full mx-auto">
+          <Link
+            href="/services"
+            className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold md:mt-48 text-sm rounded bg-brown flex justify-center items-center md:w-11/12 mt-8 w-full mx-auto"
+          >
             Online Therapy Services
-          </button>
+          </Link>
         </div>
       </AnimationOnScroll>
     </section>

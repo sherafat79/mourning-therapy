@@ -1,14 +1,10 @@
 import React from "react";
 
-function GuidingCard() {
+function GuidingCard({ title, description }) {
   return (
-    <div className="flex flex-col md:gap-9 gap-4 rounded bg-milk bg-opacity-80 md:p-11 p-6  backdrop-blur-[5.5px]  ">
-      <h5 className="text-base font-Yeseva">Compassionate Understanding</h5>
-      <p className="text-base font-jakarta leading-7">
-        We believe in providing a safe, empathetic space where you feel seen,
-        heard, and validated. We strive to understand your unique experiences
-        and emotions, offering genuine care and respect.
-      </p>
+    <div className="flex flex-col h-80  gap-4 md:max-w-sm rounded bg-milk bg-opacity-80 md:py-10 px-5 p-6  backdrop-blur-[5.5px]  ">
+      <h5 className="text-base text-center font-Yeseva">{title}</h5>
+      <p className="text-base font-jakarta leading-7">{description}</p>
     </div>
   );
 }

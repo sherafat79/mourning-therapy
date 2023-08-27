@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import bg from "@/assets/images/backgrounds/bg-2.png";
+import Link from "next/link";
 function Info() {
   return (
     <AnimationOnScroll animateIn="animate__fadeInUp" duration={3}>
@@ -33,9 +34,12 @@ function Info() {
                 dedicated to helping individuals and families overcome
                 challenges and find healing.
               </p>
-              <button className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center md:w-full w-10/12 md:mx-0 mx-auto">
+              <Link
+                href="/about"
+                className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center md:w-full w-10/12 md:mx-0 mx-auto"
+              >
                 Discover More About Ariana Behravan
-              </button>
+              </Link>
             </div>
           </div>
         </AnimationOnScroll>

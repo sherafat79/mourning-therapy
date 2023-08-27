@@ -8,9 +8,18 @@ function Guiding() {
         Guiding Principles of Care
       </h2>{" "}
       <div className="md:w-2/3 w-11/12 flex md:flex-row flex-col gap-6 items-center justify-center ">
-        <GuidingCard />
-        <GuidingCard />
-        <GuidingCard />
+        <GuidingCard
+          title="Compassionate Understanding"
+          description="We believe in providing a safe, empathetic space where you feel seen, heard, and validated. We strive to understand your unique experiences and emotions, offering genuine care and respect."
+        />
+        <GuidingCard
+          title="Collaborative Empowerment"
+          description=" We value your active participation in the therapeutic process. By working together, we aim to unlock your inner strengths, develop effective coping strategies, and empower you to achieve your personal and relational goals."
+        />
+        <GuidingCard
+          title="Commitment to Growth"
+          description="We are dedicated to facilitating personal development and resilience. Utilizing evidence-based practices and constantly staying informed about the latest research and therapeutic techniques, we help you navigate life's challenges and embrace a path of growth and healing"
+        />
       </div>
     </section>
   );

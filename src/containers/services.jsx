@@ -15,37 +15,43 @@ const data = [
     id: 1,
     name: "Individual Therapy",
     image: IndividualImage,
-    query: "Individual",
+    query: "individual",
   },
   {
     id: 2,
     name: "Couples Therapy",
     image: CouplesImage,
-    query: "Couples",
+    query: "couples",
   },
   {
     id: 3,
     name: "Family Therapy",
     image: FamilyImage,
-    query: "Family",
+    query: "family",
   },
 ];
 function ServicesContainer() {
   const searchParams = useSearchParams();
-  const type = searchParams.get("type") ?? "Individual";
+  const type = searchParams.get("type") ?? "individual";
   const [activeTab, setActiveTab] = useState(
-    data.find((item) => item.query === type)
+    data.find((item) => item.query === type.toLowerCase())
   );
   const RenderTabContent = useCallback(() => {
-    switch (type) {
-      case "Individual":
-        setActiveTab(data.find((item) => item.query === type ?? [0]));
+    switch (type.toLowerCase()) {
+      case "individual":
+        setActiveTab(
+          data.find((item) => item.query === type.toLowerCase()) ?? data[0]
+        );
         return <Individual />;
-      case "Couples":
-        setActiveTab(data.find((item) => item.query === type ?? [0]));
+      case "couples":
+        setActiveTab(
+          data.find((item) => item.query === type.toLowerCase()) ?? data[0]
+        );
         return <Couples />;
-      case "Family":
-        setActiveTab(data.find((item) => item.query === type ?? [0]));
+      case "family":
+        setActiveTab(
+          data.find((item) => item.query === type.toLowerCase()) ?? data[0]
+        );
         return <Family />;
 
       default:
@@ -63,7 +69,7 @@ function ServicesContainer() {
             <li key={item.name}>
               <Link
                 className={`ease-in-out duration-500 hover:text-cardbg  ${
-                  type === item.query && "text-cardbg font-bold"
+                  type.toLowerCase() === item.query && "text-cardbg font-bold"
                 }`}
                 href={`/services?type=${item.query}`}
                 shallow={false}
