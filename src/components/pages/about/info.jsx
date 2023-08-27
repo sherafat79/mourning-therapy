@@ -5,8 +5,8 @@ import defaultImage from "@/assets/images/backgrounds/def.png";
 
 function Info() {
   return (
-    <section className="flex bg-brown gap-12 items-center justify-center w-full px-24 py-24 ">
-      <div className="w-1/2 h-full">
+    <section className="flex flex-col md:flex-row bg-brown gap-12 items-center justify-center w-full md:px-24 md:py-24 pb-8  ">
+      <div className="md:w-1/2 w-full h-full">
         <Image
           src={defaultImage}
           width={128}
@@ -15,8 +15,8 @@ function Info() {
           className="w-full h-full"
         />
       </div>{" "}
-      <div className="w-1/2 text-sm font-jakarta leading-7 px-4 ">
-        <h2 className="font-Yeseva font-normal leading-9 mb-6 text-[2rem] ">
+      <div className="md:w-1/2 text-sm font-jakarta leading-7 px-4 ">
+        <h2 className="font-Yeseva text-center md:text-left font-normal leading-9 mb-6 text-[2rem] ">
           Ariana Behravan, LMFT
         </h2>
         <p>

@@ -18,14 +18,14 @@ function ContactForm() {
         {({}) => (
           <Form className="flex flex-col gap-5">
             <div className="w-full  ">
-              <div className="w-1/2 px-2 inline-block ">
+              <div className="md:w-1/2 w-full mb-5 md:mb-0 px-2 inline-block ">
                 <Input
                   name="name"
                   placeholder="Example: John"
                   text="First name"
                 />
               </div>
-              <div className="w-1/2 px-2 inline-block ">
+              <div className="md:w-1/2 w-full px-2 inline-block ">
                 <Input
                   name="lastname"
                   placeholder="Example: Jackson"

@@ -3,7 +3,7 @@ import React from "react";
 
 function SideBar() {
   return (
-    <div className="w-1/5 font-jakarta text-black bg-side flex flex-col gap-5 side px-16 py-14">
+    <div className="md:w-1/5 w-full font-jakarta text-black bg-side flex flex-col gap-5 side px-16 py-14">
       <div>
         <h5 className="font-bold text-xl mb-4 ">WONDERING ABOUT INSURANCE?</h5>
         <p className="text-base text-textmuted leading-8 mb-5">

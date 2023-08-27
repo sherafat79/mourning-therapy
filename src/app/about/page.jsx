@@ -7,7 +7,7 @@ import University from "@/components/pages/about/university";
 
 export default function about() {
   return (
-    <div className="flex flex-col  gap-[5.75rem]">
+    <div className="flex flex-col  md:pb-20  md:gap-[5.75rem] gap-8">
       <Info />
       <Area />
       <University />

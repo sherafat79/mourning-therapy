@@ -54,7 +54,7 @@ function ServicesContainer() {
   }, [type]);
   return (
     <div className="w-full flex service-container">
-      <div className="side w-1/5 px-16 py-12  bg-side ">
+      <div className="side w-1/5 px-16 py-12 hidden md:block bg-side ">
         <h4 className="font-jakarta text-xl font-bold text-black mb-10">
           SERVICE SPECIALTIES
         </h4>
@@ -72,7 +72,7 @@ function ServicesContainer() {
           ))}
         </ul>
       </div>
-      <div className="w-4/5 text-black ">
+      <div className="md:w-4/5 w-full text-black ">
         <div className="h-[27rem] w-full bg-cardbg">
           <Image
             width={1024}
@@ -82,7 +82,7 @@ function ServicesContainer() {
             className="h-full w-full"
           />
         </div>
-        <div className=" p-20 flex font-jakarta text-xl leading-[2.5rem]  flex-col gap-11 ">
+        <div className=" md:p-20  p-8 flex font-jakarta text-xl leading-[2.5rem]  flex-col gap-11 ">
           <h1 className="text-[2rem] font-Yeseva">{activeTab.name}</h1>
           <RenderTabContent />
         </div>

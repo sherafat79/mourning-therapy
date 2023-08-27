@@ -10,14 +10,14 @@ function Contact() {
       <div className="h-[27rem] w-full bg-6 bg-no-repeat flex justify-center items-center bg-cover ">
         <h1 className="text-textWhite font-Yeseva text-[2rem]">CONTACT ME</h1>
       </div>
-      <div className="flex service-container w-full">
+      <div className="flex md:flex-row  flex-col-reverse service-container w-full">
         <SideBar />
-        <div className=" w-4/5  p-20 ">
+        <div className=" md:w-4/5 w-full   md:p-20 p-8 ">
           <div className="flex flex-col gap-10  ">
             <h1 className="text-[2rem] text-black font-Yeseva text-center">
               BOOK YOUR CONSULTATION
             </h1>
-            <p className="font-jakarta leading-10 text-xl text-textmuted">
+            <p className="font-jakarta leading-10  text-center md:text-left text-xl text-textmuted">
               Embark on your path to healthier relationships by booking a
               consultation with us. Simply provide necessary details through our
               online system, and Ariana will be ready to assist you on your

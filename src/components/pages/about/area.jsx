@@ -6,8 +6,8 @@ import defaultImage from "@/assets/images/icons/area.svg";
 function Area() {
   return (
     <section className="text-black">
-      <div className="flex items-center gap-20 justify-center mt-16 w-[60%] mx-auto">
-        <div className="w-1/2">
+      <div className="flex md:flex-row flex-col items-center gap-20 justify-center md:mt-16 md:w-[60%] p-8 md:p-0 mx-auto">
+        <div className="md:w-1/2 w-full">
           <Image
             src={defaultImage}
             width={128}
@@ -16,7 +16,7 @@ function Area() {
             className="w-full h-full"
           />
         </div>
-        <div className="text-black w-1/2 ">
+        <div className="text-black md:w-1/2 text-center md:text-left w-full ">
           <h4 className="font-Yeseva font-normal  text-[2rem] mb-10 ">
             Key Areas of Expertise
           </h4>
