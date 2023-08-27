@@ -18,7 +18,7 @@ function Journey() {
           link="Contact Us"
           description="Book your free consultation and let our supportive process guide you towards positive changes and well-being."
         />
-        <hr class="text-black w-full md:hidden  mt-14" />
+        <hr className="text-black w-full md:hidden  mt-14" />
         <div className="border-l h-[200px] hidden md:block border-opacity-25  border-black"></div>
         <JourneyCard
           icon={serviceIcon}

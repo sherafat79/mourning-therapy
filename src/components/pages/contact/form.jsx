@@ -50,14 +50,14 @@ function ContactForm() {
                 description="You will receive a message reminder before your appointment"
               />
             </div>
-            <div class="flex items-center px-2 ">
+            <div className="flex items-center px-2 ">
               <Field
                 id="link-checkbox"
                 type="checkbox"
                 name="news"
-                class="w-4 h-4 bg-white border-none rounded "
+                className="w-4 h-4 bg-white border-none rounded "
               />
-              <label for="link-checkbox" class="ml-2 text-sm text-[#000] ">
+              <label for="link-checkbox" className="ml-2 text-sm text-[#000] ">
                 By checking this box, you will receive latest news and content
                 <span className="font-bold">from Mourning therapy</span>
               </label>
