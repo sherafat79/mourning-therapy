@@ -62,7 +62,9 @@ function ServicesContainer() {
           {data.map((item) => (
             <li key={item.name}>
               <Link
-                className={`${type === item.query && "text-cardbg font-bold"}`}
+                className={`ease-in-out duration-500 hover:text-cardbg  ${
+                  type === item.query && "text-cardbg font-bold"
+                }`}
                 href={`/services?type=${item.query}`}
                 shallow={false}
               >

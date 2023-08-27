@@ -19,6 +19,7 @@ module.exports = {
       side: "#F9EEE5",
       gray: "#D9D9D9",
       textmuted: "#51575D",
+      mobilebg: "#E6D5D0",
       transparent: "transparent",
     },
     fontFamily: {

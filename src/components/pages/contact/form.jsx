@@ -68,7 +68,7 @@ function ContactForm() {
 
             <button
               type="submit"
-              className="font-jakarta  p-3 font-medium  text-sm rounded bg-brown flex justify-center items-center w-full mx-auto"
+              className="font-jakarta hover:bg-line ease-in-out duration-500  p-3 font-medium  text-sm rounded bg-brown flex justify-center items-center w-full mx-auto"
             >
               Make appointment
             </button>

@@ -14,7 +14,10 @@ function ServiceCard({ icon, title, content, link, href }) {
       />
       <h5 className="font-Yeseva text-base text-black mb-3">{title}</h5>
       <p className="font-jakarta text-sm font-medium leading-7">{content}</p>
-      <Link href={href} className="underline text-xs font-bold leading-7 ">
+      <Link
+        href={href}
+        className="underline ease-in-out duration-500 hover:text-darkBrown text-xs font-bold leading-7 "
+      >
         {link}
       </Link>
     </div>
