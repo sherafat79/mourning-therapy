@@ -6,11 +6,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      transitionProperty: {
-        height: "height",
-      },
-    },
+    extend: {},
     colors: {
       milk: "#F8F8F8CC",
       brown: "#E7D7C8",
