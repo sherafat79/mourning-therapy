@@ -6,11 +6,11 @@ import ContactForm from "@/components/pages/contact/form";
 
 function Contact() {
   return (
-    <div className="w-full flex service-container flex-col">
+    <div className="w-full flex flex-col">
       <div className="h-[27rem] w-full bg-6 bg-no-repeat flex justify-center items-center bg-cover ">
         <h1 className="text-textWhite font-Yeseva text-[2rem]">CONTACT ME</h1>
       </div>
-      <div className="flex  w-full">
+      <div className="flex service-container w-full">
         <SideBar />
         <div className=" w-4/5  p-20 ">
           <div className="flex flex-col gap-10  ">

@@ -22,13 +22,13 @@ function NewsLetter() {
           Stay updated with our latest insights, therapeutic strategies, and
           tips for healthier relationships.
         </p>
-        <div className="flex gap-1 w-full  mt-5">
+        <div className="flex gap-1 font-jakarta w-full  mt-5">
           <input
             type="email"
             placeholder="your email address"
             className="bg-white   w-8/12 bg-opacity-20 px-4 py-1 rounded placeholder:text-darkBrown text-xs "
           />
-          <button className="bg-brown flex   w-4/12 rounded justify-center items-center px-2 py-3">
+          <button className="bg-brown flex  hover:bg-line ease-in-out duration-500   w-4/12 rounded justify-center items-center px-2 py-3">
             Send
           </button>
         </div>

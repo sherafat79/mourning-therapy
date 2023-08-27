@@ -1,4 +1,5 @@
 import { YesevaOne, PlusJakarta } from "@/utils/font";
+import "animate.css/animate.min.css";
 import "./globals.css";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";

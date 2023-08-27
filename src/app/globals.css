@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --animate-duration: 2s;
+}
 .bg-1 {
   background-image: url("../assets/images/backgrounds/bg-1.png");
 }

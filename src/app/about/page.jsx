@@ -2,7 +2,7 @@
 
 import Info from "@/components/pages/about/info";
 import Booking from "@/components/pages/home/booking";
-import Area from "./area";
+import Area from "../../components/pages/about/area";
 import University from "@/components/pages/about/university";
 
 export default function about() {
