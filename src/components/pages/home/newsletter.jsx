@@ -4,8 +4,8 @@ import defaultImage from "@/assets/images/backgrounds/def.png";
 
 function NewsLetter() {
   return (
-    <section className=" mx-auto flex  bg-cardbg gap-11 w-3/4">
-      <div className="w-1/2">
+    <section className=" mx-auto flex md:flex-row flex-col bg-cardbg gap-11 md:w-3/4 w-full">
+      <div className="md:w-1/2 w-full">
         <Image
           src={defaultImage}
           width={128}
@@ -14,11 +14,11 @@ function NewsLetter() {
           className="w-full h-full"
         />
       </div>
-      <div className="w-1/2 p-20 flex flex-col justify-center items-center">
+      <div className="md:w-1/2 md:p-20 p-8 flex flex-col justify-center items-center">
         <h2 className="font-Yeseva text-center font-normal leading-9 text-[2rem] ">
           NEWSLETTER
         </h2>
-        <p className="font-jakarta mt-6 text-base leading-7">
+        <p className="font-jakarta mt-6 text-base text-center md:text-left leading-7">
           Stay updated with our latest insights, therapeutic strategies, and
           tips for healthier relationships.
         </p>

@@ -21,7 +21,7 @@ function Customers() {
   }, []);
   return (
     <section className="text-black">
-      <div className="flex items-center gap-20 justify-center h-full mt-16 w-[60%] mx-auto">
+      <div className="flex items-center gap-20 justify-center h-full mt-16 md:w-[60%]  w-full  p-8 md:p-0 mx-auto">
         <button onClick={handleNext}>
           <Image
             src={leftIcon}

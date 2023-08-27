@@ -12,8 +12,8 @@ function Expect() {
       <h2 className="font-Yeseva text-center font-normal leading-9 text-[2rem] ">
         What to Expect
       </h2>
-      <div className="flex items-center gap-20 justify-center mt-16 w-[60%] mx-auto">
-        <div className="w-1/2 ">
+      <div className="flex flex-col md:flex-row items-center gap-20 justify-center mt-16 md:w-[60%] md:mx-auto">
+        <div className="md:w-1/2 w-full ">
           <AnimationOnScroll animateIn="animate__zoomIn" duration={2}>
             <Image
               src={defaultImage}
@@ -24,7 +24,7 @@ function Expect() {
             />
           </AnimationOnScroll>
         </div>
-        <div className="text-black w-1/2   ">
+        <div className="text-black md:w-1/2 w-full p-8   ">
           <AnimationOnScroll animateIn="animate__fadeInRight" duration={3}>
             <h4 className="font-Yeseva font-normal  text-2xl mb-7 ">
               Journey Towards Healing

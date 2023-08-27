@@ -16,7 +16,7 @@ import Customers from "@/components/pages/home/customers";
 /* eslint-disable react/no-unescaped-entities */
 export default function Home() {
   return (
-    <div className="flex flex-col pb-20  gap-[5.75rem]">
+    <div className="flex flex-col md:pb-20  md:gap-[5.75rem] gap-8">
       <Hero />
       <Info />
       <Services />

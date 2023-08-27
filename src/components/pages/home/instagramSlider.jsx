@@ -24,7 +24,7 @@ function Instagram() {
       <h2 className="font-Yeseva text-center font-normal leading-9 text-[2rem] ">
         FOLLOW ME ON INSTAGRAM
       </h2>
-      <div className="flex items-center gap-20 justify-center h-full mt-16 w-[60%] mx-auto">
+      <div className="flex  items-center gap-20 justify-center h-full mt-16 md:w-[60%] p-8 md:p-0  mx-auto">
         <button onClick={handleNext}>
           <Image
             src={leftIcon}
@@ -37,12 +37,18 @@ function Instagram() {
         <Swiper
           modules={[Navigation]}
           ref={sliderRef}
-          spaceBetween={20}
+          spaceBetween={10}
           loop
           className="w-full"
-          slidesPerView={5}
+          slidesPerView={1}
+          breakpoints={{
+            998: {
+              slidesPerView: 5,
+              spaceBetween: 20,
+            },
+          }}
         >
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -51,7 +57,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -60,7 +66,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -69,7 +75,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -78,7 +84,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -87,7 +93,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -96,7 +102,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -105,7 +111,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}
@@ -114,7 +120,7 @@ function Instagram() {
               className="h-full w-full"
             />
           </SwiperSlide>
-          <SwiperSlide className="w-40 h-40">
+          <SwiperSlide className="md:w-40 w-60 md:h-40 h-60">
             <Image
               src={defaultImage}
               width={128}

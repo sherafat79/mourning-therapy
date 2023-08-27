@@ -1,14 +1,23 @@
 "use client";
 
+import Image from "next/image";
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import bg from "@/assets/images/backgrounds/bg-5.png";
 
 function Results() {
   return (
-    <section className="bg-5 bg-cover bg-no-repeat flex flex-row-reverse w-full px-80">
+    <section className="md:bg-5 bg-cover bg-no-repeat w-full md:px-80  flex-row-reverse">
+      <Image
+        src={bg}
+        width={1024}
+        className="md:hidden block"
+        height={512}
+        alt="bg"
+      />
       <AnimationOnScroll animateIn="animate__fadeInUp" duration={3}>
-        <div className="bg-milk bg-opacity-80 p-8  w-[20rem] text-black  backdrop-blur-[5.5px] ">
+        <div className="bg-white  md:bg-opacity-80 p-8  md:w-[20rem] w-full text-black  backdrop-blur-[5.5px] ">
           <h2 className="font-Yeseva font-normal leading-9 text-xl text-darkBrown ">
             Guided by Results: Our Empowering Approach
           </h2>{" "}

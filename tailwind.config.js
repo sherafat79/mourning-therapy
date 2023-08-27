@@ -19,10 +19,14 @@ module.exports = {
       side: "#F9EEE5",
       gray: "#D9D9D9",
       textmuted: "#51575D",
+      transparent: "transparent",
     },
     fontFamily: {
       Yeseva: ["var(--font-yeseva-one)"],
       jakarta: ["var(--font-plus-jakarta)"],
+    },
+    screens: {
+      md: "998px",
     },
   },
   plugins: [],

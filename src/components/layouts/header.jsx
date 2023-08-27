@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <header className="flex px-10 justify-center sticky top-0 h-20 z-10 bg-white">
-      <div className="container h-full flex justify-between ">
+      <div className="container h-full hidden md:flex justify-between ">
         <div className="flex justify-center items-center  gap-16  h-full font-jakarta">
           <Link
             className={`text-sm ease-in-out duration-500 hover:text-cardbg ${

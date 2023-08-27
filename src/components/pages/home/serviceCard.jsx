@@ -4,7 +4,7 @@ import React from "react";
 
 function ServiceCard({ icon, title, content, link, href }) {
   return (
-    <div className="bg-brown flex flex-col p-8 text-center items-center ">
+    <div className="bg-brown flex flex-col p-8 text-center rounded items-center ">
       <Image
         src={icon}
         width={64}

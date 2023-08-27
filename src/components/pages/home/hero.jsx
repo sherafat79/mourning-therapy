@@ -5,9 +5,9 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Hero() {
   return (
-    <section className="bg-1 bg-cover bg-no-repeat flex justify-center items-center  h-screen">
+    <section className="bg-1 bg-cover bg-no-repeat flex justify-center md:items-center items-end  h-screen">
       <AnimationOnScroll animateIn="animate__zoomIn" duration={3}>
-        <div className="bg-milk bg-opacity-80 p-11 w-[40rem] text-black  backdrop-blur-[5.5px] ">
+        <div className="bg-[#F8F8F8] md:bg-opacity-80 bg-opacity-100 p-11 md:w-[40rem] w-full text-black  md:backdrop-blur-[5.5px] backdrop-blur-0 ">
           <h2 className="font-Yeseva font-normal leading-9 text-[2rem] ">
             Healing begins with you; embrace your journey and together, we'll
             unravel the rest.
