@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Booking() {
@@ -7,9 +8,12 @@ function Booking() {
         Step forward and book a life-changing consultation today. Embrace your
         potential.
       </h2>
-      <button className="font-jakarta hover:bg-line ease-in-out duration-500  leading-7 md:p-1 p-2 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center md:w-3/5 w-full mx-auto">
+      <Link
+        href="/contact"
+        className="font-jakarta hover:bg-line ease-in-out duration-500  leading-7 md:p-1 p-2 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center md:w-3/5 w-full mx-auto"
+      >
         BOOK YOUR CONSULTATION
-      </button>
+      </Link>
     </section>
   );
 }

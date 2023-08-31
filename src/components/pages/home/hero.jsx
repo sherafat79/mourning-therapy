@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import Link from "next/link";
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
@@ -18,9 +19,12 @@ function Hero() {
             you the vital resources needed for lasting and meaningful
             transformation.
           </p>
-          <button className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center w-11/12 mx-auto">
+          <Link
+            href="/contact"
+            className="font-jakarta hover:bg-line ease-in-out duration-500 leading-7 p-1 font-semibold mt-14 text-sm rounded bg-brown flex justify-center items-center w-11/12 mx-auto"
+          >
             Schedule Consultation
-          </button>
+          </Link>
         </div>
       </AnimationOnScroll>
     </section>

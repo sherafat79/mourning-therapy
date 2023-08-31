@@ -22,7 +22,7 @@ function Header() {
   useEffect(() => {
     changeLogo();
     window.addEventListener("scroll", changeLogo);
-  });
+  }, []);
   return (
     <>
       {mobileHeaderOpen && (
@@ -33,7 +33,9 @@ function Header() {
       )}
       <header
         className={`flex md:px-10  ease  duration-700   px-5 justify-center sticky top-0  ${
-          scrolled ? "md:h-16 shadow-md  h-20" : "h-20"
+          scrolled
+            ? "md:h-16 shadow-md bg-opacity-80 backdrop-blur-sm h-20"
+            : "h-20"
         }   z-10 bg-white`}
       >
         <div className="w-10/12  h-full hidden md:flex items-center justify-between ">
