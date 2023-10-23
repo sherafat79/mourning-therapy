@@ -1,4 +1,4 @@
-import ServicesContainer from "@/containers/services";
+import ServicesContainer from "@/containers/Services";
 import React from "react";
 
 function page() {
