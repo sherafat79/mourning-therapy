@@ -30,9 +30,7 @@ const data = [
     query: "family",
   },
 ];
-function ServicesContainer() {
-  const searchParams = useSearchParams();
-  const type = searchParams.get("type") ?? "individual";
+function ServicesContainer({ type }) {
   const [activeTab, setActiveTab] = useState(
     data.find((item) => item.query === type.toLowerCase())
   );

@@ -1,8 +1,8 @@
 import ServicesContainer from "@/containers/Services";
 import React from "react";
 
-function page() {
-  return <ServicesContainer />;
+function page({ searchParams }) {
+  return <ServicesContainer type={searchParams.type ?? "individual"} />;
 }
 
 export default page;
