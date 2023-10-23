@@ -1,6 +1,8 @@
 import { YesevaOne, PlusJakarta } from "@/utils/font";
 import "animate.css/animate.min.css";
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 
@@ -34,7 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${YesevaOne.variable} ${PlusJakarta.variable}`}>
         <Header />
-        <main className="min-h-[80vh]">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

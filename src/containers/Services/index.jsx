@@ -6,7 +6,6 @@ import IndividualImage from "@/assets/images/backgrounds/Individual.png";
 import FamilyImage from "@/assets/images/backgrounds/Family.png";
 import CouplesImage from "@/assets/images/backgrounds/Couples.png";
 import Individual from "@/components/pages/services/Individual";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Family from "@/components/pages/services/Family";
 import Couples from "@/components/pages/services/Couples";
