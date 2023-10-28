@@ -8,19 +8,17 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 function Info() {
   return (
     <section className="flex flex-col md:flex-row bg-brown gap-12 items-center justify-center w-full md:px-24 md:py-24 pb-8  ">
-      <div className="md:w-1/2 w-full h-full">
-        <AnimationOnScroll animateIn="animate__zoomIn" duration={2}>
-          <Image
-            src={defaultImage}
-            width={128}
-            height={128}
-            alt="img"
-            className="w-full h-full"
-          />
-        </AnimationOnScroll>
+      <div className="md:w-1/2 w-full h-full animate__animated animate__zoomIn">
+        <Image
+          src={defaultImage}
+          width={128}
+          height={128}
+          alt="img"
+          className="w-full h-full"
+        />
       </div>{" "}
       <div className="md:w-1/2 text-sm font-jakarta leading-7 px-4 ">
-        <AnimationOnScroll animateIn="animate__fadeInRight" duration={3}>
+        <div className="animate__fadeIn animate__animated">
           <h2 className="font-Yeseva text-center md:text-left font-normal leading-9 mb-6 text-[2rem] ">
             Ariana Behravan, LMFT
           </h2>
@@ -73,7 +71,7 @@ function Info() {
             schedule a session or inquire further about how therapy can support
             you. I'm here to support you every step of the way.
           </p>
-        </AnimationOnScroll>
+        </div>
       </div>
     </section>
   );

@@ -7,13 +7,13 @@ import bg from "@/assets/images/backgrounds/bg-2.png";
 import Link from "next/link";
 function Info() {
   return (
-    <AnimationOnScroll animateIn="animate__fadeInUp" duration={3}>
+    <AnimationOnScroll animateIn="animate__fadeInUp" duration={2}>
       <section className=" flex flex-col   text-black md:justify-center justify-end items-center md:w-8/12 w-full mx-auto md:gap-16 gap-8 ">
         <h2 className="font-Yeseva text-2xl px-3 text-center ">
           You are worthy of a life brimming with love, joy, and satisfaction.
           Our commitment is to guide you in discovering it.
         </h2>
-        <AnimationOnScroll animateIn="animate__zoomIn" duration={3}>
+        <AnimationOnScroll animateIn="animate__zoomIn" duration={2}>
           <div className="bg-2   animate__zoomIn bg-contain md:bg-cover bg-no-repeat w-full rounded    ">
             <div className="md:w-2/5 w-full md:text-bg   md:p-8 p-0">
               <Image

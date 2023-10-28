@@ -7,7 +7,7 @@ function Guiding() {
       <h2 className="font-Yeseva mb-11 text-center font-normal leading-9 text-[2rem] ">
         Guiding Principles of Care
       </h2>{" "}
-      <div className="md:w-2/3 w-11/12 flex md:flex-row flex-col gap-6 items-center justify-center ">
+      <div className="flex md:flex-row flex-col gap-6 items-center  justify-center">
         <GuidingCard
           title="Compassionate Understanding"
           description="We believe in providing a safe, empathetic space where you feel seen, heard, and validated. We strive to understand your unique experiences and emotions, offering genuine care and respect."

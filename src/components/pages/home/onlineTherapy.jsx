@@ -19,7 +19,7 @@ function OnlineTherapy() {
         height={512}
         alt="bg"
       />
-      <AnimationOnScroll animateIn="animate__fadeInUp" duration={3}>
+      <AnimationOnScroll animateIn="animate__fadeInUp" duration={2}>
         <div className="md:bg-milk bg-white  md:bg-opacity-80 p-8  md:w-[20rem] w-full text-black  md:backdrop-blur-[5.5px] ">
           <h2 className="font-Yeseva font-normal leading-9 text-xl text-darkBrown ">
             Connected Care: Remote Therapy Sessions

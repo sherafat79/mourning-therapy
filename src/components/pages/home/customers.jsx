@@ -21,8 +21,8 @@ function Customers() {
   }, []);
   return (
     <section className="text-black">
-      <div className="flex items-center gap-20 justify-center h-full mt-16 md:w-[60%]  w-full  p-4 md:p-0 mx-auto">
-        <button onClick={handleNext}>
+      <div className="flex items-center justify-between  h-full mt-16 md:w-[70%]  w-full  p-4 md:p-0 mx-auto">
+        <button className="w-11 h-6 " onClick={handleNext}>
           <Image
             src={leftIcon}
             width={128}
@@ -36,8 +36,8 @@ function Customers() {
           ref={sliderRef}
           spaceBetween={0}
           loop
-          className="w-full"
           slidesPerView={1}
+          className="w-11/12"
         >
           <SwiperSlide>
             <div className="text-center">

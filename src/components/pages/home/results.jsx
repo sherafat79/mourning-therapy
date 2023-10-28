@@ -16,7 +16,7 @@ function Results() {
         height={512}
         alt="bg"
       />
-      <AnimationOnScroll animateIn="animate__fadeInUp" duration={3}>
+      <AnimationOnScroll animateIn="animate__fadeInUp" duration={2}>
         <div className="bg-white  md:bg-opacity-80 p-8  md:w-[20rem] w-full text-black  backdrop-blur-[5.5px] ">
           <h2 className="font-Yeseva font-normal leading-9 text-xl text-darkBrown ">
             Guided by Results: Our Empowering Approach

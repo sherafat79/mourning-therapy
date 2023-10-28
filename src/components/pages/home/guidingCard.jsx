@@ -2,7 +2,7 @@ import React from "react";
 
 function GuidingCard({ title, description }) {
   return (
-    <div className="flex flex-col h-80  gap-4 md:max-w-sm rounded bg-milk bg-opacity-80 md:py-10 px-5 p-6  backdrop-blur-[5.5px]  ">
+    <div className="flex flex-col w-[21.5rem]  h-[21.5rem] gap-5 rounded bg-milk bg-opacity-80 md:pt-12 md:pb-8 px-6 p-6 backdrop-blur-[5.5px] flex-1">
       <h5 className="text-base text-center font-Yeseva">{title}</h5>
       <p className="text-base font-jakarta leading-7">{description}</p>
     </div>

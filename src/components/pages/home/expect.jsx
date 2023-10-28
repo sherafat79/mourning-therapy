@@ -25,7 +25,7 @@ function Expect() {
           </AnimationOnScroll>
         </div>
         <div className="text-black md:w-1/2 w-full p-8   ">
-          <AnimationOnScroll animateIn="animate__fadeInRight" duration={3}>
+          <AnimationOnScroll animateIn="animate__fadeInRight" duration={2}>
             <h4 className="font-Yeseva font-normal  text-2xl mb-7 ">
               Journey Towards Healing
             </h4>

@@ -22,7 +22,7 @@ function Area() {
           </AnimationOnScroll>
         </div>
         <div className="text-black md:w-1/2 text-center md:text-left w-full ">
-          <AnimationOnScroll animateIn="animate__fadeInRight" duration={3}>
+          <AnimationOnScroll animateIn="animate__fadeInRight" duration={2}>
             <h4 className="font-Yeseva font-normal  text-[2rem] mb-10 ">
               Key Areas of Expertise
             </h4>
