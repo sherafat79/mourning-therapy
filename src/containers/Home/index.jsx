@@ -17,7 +17,7 @@ export default function HomeContainer() {
   return (
     <div className="flex flex-col md:pb-20  md:gap-[5.75rem] gap-8">
       <Hero />
-      <Info />
+      {/* <Info /> */}
       <Services />
       <OnlineTherapy />
       <Expect />
