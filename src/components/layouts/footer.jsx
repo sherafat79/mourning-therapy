@@ -6,9 +6,9 @@ import Image from "next/image";
 function Footer() {
   return (
     <footer className="   w-full static bottom-0 footer-bg  bg-no-repeat bg-cover  ">
-      <div className="  w-3/4 pt-11 pb-4  mx-auto">
+      <div className=" container  pt-6 pb-4  mx-auto">
         <div className="flex flex-col md:flex-row md:justify-start md:items-start justify-center items-center  md:gap-[5.75rem] gap-8">
-          <div className="flex items-center md:items-start flex-col gap-10">
+          <div className="flex items-center md:items-start flex-col gap-6">
             <Link
               className="text-sm ease-in-out duration-500 hover:text-cardbg text-black font-semibold leading-7 capitalize "
               href="/"
@@ -43,7 +43,7 @@ function Footer() {
               alt="logo"
             />
           </Link>
-          <div className="flex items-center md:items-start flex-col gap-10">
+          <div className="flex items-center md:items-start flex-col gap-6">
             <Link
               className="text-sm ease-in-out duration-500 hover:text-cardbg text-black font-semibold leading-7 capitalize "
               href="/"
@@ -65,7 +65,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <hr className="text-line mt-6 md:mt-14" />
+      <hr className="text-line mt-6 md:mt-5" />
       <p className="font-jakarta py-4 text-base font-extrabold leading-7 text-center">
         © 2023, All rights reserved
       </p>

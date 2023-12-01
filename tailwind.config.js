@@ -29,6 +29,9 @@ module.exports = {
     screens: {
       md: "998px",
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 };

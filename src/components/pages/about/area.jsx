@@ -9,7 +9,7 @@ function Area() {
   return (
     <section className="text-black">
       <div className="flex md:flex-row flex-col items-center gap-20 justify-center md:mt-16 md:w-[60%] p-8 md:p-0 mx-auto">
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-2/5 w-full">
           <Image
             src={defaultImage}
             width={128}
