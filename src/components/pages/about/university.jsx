@@ -5,7 +5,7 @@ import uni2 from "@/assets/images/uni2.png";
 
 function University() {
   return (
-    <section className="flex flex-col md:flex-row justify-center gap-4  items-center w-full px-4 md:px-0 ">
+    <section className="flex container flex-col md:flex-row justify-center gap-4  items-center w-full px-4 md:px-0 ">
       <UniversityItem
         title="Pepperdine University"
         description="Master of Arts in Clinical Psychology with an emphasis in Marriage and Family Therapy"

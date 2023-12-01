@@ -6,10 +6,10 @@ import React from "react";
 
 function UniversityItem({ icon, title, description }) {
   return (
-    <div className=" h-full   border-8 text-black border-cardbg overflow-hidden rounded-[50%] flex flex-col justify-start items-center text-center  p-16">
-      <div className="max-w-md md:px-10">
+    <div className="md:h-[500px] md:w-[500px]   border-8 text-black border-cardbg overflow-hidden rounded-[50%] flex flex-col justify-start items-center text-center  p-16">
+      <div className="">
         <Image
-          className="md:w-72 md:h-72 w-24 mx-auto h-24"
+          className="md:w-40 md:h-40 w-24 mx-auto h-24"
           src={icon}
           width={512}
           height={512}
