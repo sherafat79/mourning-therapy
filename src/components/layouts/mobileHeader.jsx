@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import mobileLogo from "@/assets/images/icons/mobile-logo.svg";
+import newLogo from "@/assets/new-logo.png";
 import closeIcon from "@/assets/images/icons/close.svg";
 import { useSearchParams } from "next/navigation";
 
@@ -9,107 +9,76 @@ function MobileHeader({ onClose, path }) {
   const searchParams = useSearchParams();
   const type = searchParams.get("type") ?? "individual";
   return (
-    <div className="h-screen w-full animate__animated animate__faster  animate__slideInRight  fixed  top-0 right-0 transform z-50  overflow-y-auto   bg-mobilebg">
-      <div className="px-5  h-20 ">
-        <div className="w-full h-full md:hidden flex justify-between items-center ">
-          <Link href="/">
-            <Image src={mobileLogo} width={200} height={100} alt="logo" />
-          </Link>
+    <nav className="h-screen w-full animate__animated animate__faster animate__slideInLeft fixed top-0 right-0 transform z-50 overflow-y-auto bg-mobilebg" aria-label="منوی موبایل">
+      <div className="px-5 h-20">
+        <div className="w-full h-full md:hidden flex justify-between items-center">
           <button onClick={onClose}>
-            <Image
-              className="w-8 h-8"
-              src={closeIcon}
-              width={200}
-              height={100}
-              alt="logo"
-            />
+            <Image className="w-8 h-8" src={closeIcon} width={200} height={100} alt="بستن" />
           </button>
+          <Link href="/">
+            <Image src={newLogo} width={160} height={60} alt="صحرا تجسم" className="object-contain" />
+          </Link>
         </div>
       </div>
-      <div className="px-8 font-jakarta uppercase font-bold text-black text-xl">
-        <ul className="[&>li]:mb-6  ">
+      <div className="px-8 font-jakarta font-bold text-black text-xl">
+        <ul className="[&>li]:mb-6">
           <li>
-            <Link
-              onClick={onClose}
-              className={` ${path === "/" && "text-[#8C8C8C]"}`}
-              href="/"
-            >
-              HOME
+            <Link onClick={onClose} className={`${path === "/" && "text-[#8C8C8C]"}`} href="/">
+              خانه
             </Link>
           </li>
           <li>
-            <Link
-              href="/about"
-              className={` ${path === "/about" && "text-[#8C8C8C]"}`}
-              onClick={onClose}
-            >
-              ABOUT ME
+            <Link href="/about" className={`${path === "/about" && "text-[#8C8C8C]"}`} onClick={onClose}>
+              درباره صحرا
             </Link>
           </li>
           <li>
-            <Link
-              href="/services"
-              className={` ${path === "/services" && "text-[#8C8C8C]"}`}
-              onClick={onClose}
-            >
-              SERVICES
+            <Link href="/services" className={`${path === "/services" && "text-[#8C8C8C]"}`} onClick={onClose}>
+              خدمات
             </Link>
-            <ul className="[&>li]:mb-6  px-8">
+            <ul className="[&>li]:mb-6 px-8">
               <li className="mt-6">
                 <Link
                   href="/services?type=Individual"
-                  className={` ${
-                    path === "/services" &&
-                    type.toLowerCase() === "individual" &&
-                    "text-cardbg"
-                  }`}
+                  className={`${path === "/services" && type.toLowerCase() === "individual" && "text-cardbg"}`}
                   onClick={onClose}
                 >
-                  Individual Therapy
+                  جلسات فردی بدن‌محور
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/services?type=Couples"
-                  className={` ${
-                    path === "/services" &&
-                    type.toLowerCase() === "couples" &&
-                    "text-cardbg"
-                  }`}
+                  className={`${path === "/services" && type.toLowerCase() === "couples" && "text-cardbg"}`}
                   onClick={onClose}
                 >
-                  Couples Therapy
+                  حمایت در تصمیم‌گیری
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/services?type=Family"
-                  className={` ${
-                    path === "/services" &&
-                    type.toLowerCase() === "family" &&
-                    "text-cardbg"
-                  }`}
+                  className={`${path === "/services" && type.toLowerCase() === "family" && "text-cardbg"}`}
                   onClick={onClose}
                 >
-                  Family Therapy
+                  کار هیجانی و سوماتیک
                 </Link>
               </li>
             </ul>
           </li>
           <li>
-            <Link
-              href="/contact"
-              onClick={onClose}
-              className={` ${path === "/contact" && "text-[#8C8C8C]"}`}
-            >
-              CONTACT
+            <Link href="/contact" onClick={onClose} className={`${path === "/contact" && "text-[#8C8C8C]"}`}>
+              تماس
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={onClose} className={`${path?.startsWith("/blog") && "text-[#8C8C8C]"}`}>
+              مقالات
             </Link>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 

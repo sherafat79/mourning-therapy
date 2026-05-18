@@ -1,4 +1,4 @@
-import { YesevaOne, PlusJakarta } from "@/utils/font";
+import { VazirMatn } from "@/utils/font";
 import "animate.css/animate.min.css";
 import "./globals.css";
 import "swiper/css";
@@ -6,10 +6,15 @@ import "swiper/css/navigation";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 
+const siteUrl = "https://sahra-embodiment.com";
+
 export const metadata = {
-  title: "mourning therapy",
-  description:
-    "Healing begins with you; embrace your journey and together, we'll unravel the rest.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "صحرا تجسم | صحرا حسینی",
+    template: "%s | صحرا تجسم",
+  },
+  description: "درمان بدن‌محور و هیجانی با صحرا حسینی — فضایی برای آرامش، احساس امنیت و تحول از درون.",
   icons: [
     {
       rel: "icon",
@@ -29,12 +34,31 @@ export const metadata = {
       url: "/favicon/apple-touch-icon.png",
     },
   ],
+  openGraph: {
+    type: "website",
+    locale: "fa_IR",
+    siteName: "صحرا تجسم",
+    title: "صحرا تجسم | صحرا حسینی",
+    description: "درمان بدن‌محور و هیجانی با صحرا حسینی — فضایی برای آرامش، احساس امنیت و تحول از درون.",
+    url: siteUrl,
+    images: [{ url: "/favicon/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "صحرا تجسم | صحرا حسینی",
+    description: "درمان بدن‌محور و هیجانی با صحرا حسینی — فضایی برای آرامش، احساس امنیت و تحول از درون.",
+    images: ["/favicon/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${YesevaOne.variable} ${PlusJakarta.variable}`}>
+    <html lang="fa" dir="rtl">
+      <body className={`${VazirMatn.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

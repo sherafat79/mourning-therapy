@@ -3,33 +3,35 @@ import ServiceCard from "./serviceCard";
 import icon from "@/assets/images/icons/discussion.svg";
 import iconIndividual from "@/assets/images/icons/tiredness.svg";
 import iconFamily from "@/assets/images/icons/social-community.svg";
+
 function Services() {
   return (
     <section className="p-4">
-      <h2 className="font-Yeseva mb-16 text-4xl text-center ">
-        Compassionate Therapy Services
-      </h2>
-      <div className="flex flex-col md:flex-row items-center w-full justify-center gap-8 md:px-40">
+      <div className="text-center mb-14">
+        <p className="text-xs tracking-widest text-cardbg mb-3 font-medium">SERVICES</p>
+        <h2 className="font-Yeseva text-4xl">خدمات ما</h2>
+      </div>
+      <div className="flex flex-col md:flex-row items-stretch w-full justify-center gap-6 md:px-40">
         <ServiceCard
-          content="Individual therapy is a one-on-one process that helps individuals understand their emotions."
-          title="Individual Therapy"
+          content="کار با اضطراب، فریز، فرسودگی — تنظیم هیجانی و بازسازی حس ایمنی در بدن."
+          title="جلسات فردی بدن‌محور"
           icon={iconIndividual}
           href="/services?type=Individual"
-          link="Therapy for Individuals"
+          link="بیشتر بدانید"
         />
         <ServiceCard
-          content="Aids partners in resolving conflicts and enhancing communication for healthier relationships"
-          title="Marriage & Couples Counseling"
+          content="همراهی در تصمیم‌های مهم زندگی — رابطه، کار، جابه‌جایی — با آگاهی از الگوهای درونی."
+          title="حمایت در تصمیم‌گیری"
           icon={icon}
           href="/services?type=Couples"
-          link="Therapy for Marriage & Couples"
+          link="بیشتر بدانید"
         />
         <ServiceCard
-          content="Family therapy fosters healthier interactions and resolves conflicts within family dynamics."
-          title="Family Therapy"
+          content="تنظیم سیستم عصبی، کار با تروما و بازگشت به احساس امنیت از طریق بدن."
+          title="کار هیجانی و سوماتیک"
           icon={iconFamily}
           href="/services?type=family"
-          link="Therapy for Families"
+          link="بیشتر بدانید"
         />
       </div>
     </section>

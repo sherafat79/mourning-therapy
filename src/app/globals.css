@@ -1,39 +1,230 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --animate-duration: 2s;
 }
+
+* {
+  font-family: var(--font-vazir-matn), sans-serif;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  background-color: #fdfaf7;
+}
+
+/* ── Fabric-in-wind animations ── */
+@keyframes fabricFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg) skewX(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(0.4deg) skewX(0.3deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(-0.3deg) skewX(-0.4deg);
+  }
+
+  75% {
+    transform: translateY(-6px) rotate(0.2deg) skewX(0.2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg) skewX(0deg);
+  }
+}
+
+@keyframes fabricWave {
+  0% {
+    transform: skewY(0deg) scaleX(1);
+  }
+
+  30% {
+    transform: skewY(0.5deg) scaleX(1.005);
+  }
+
+  60% {
+    transform: skewY(-0.4deg) scaleX(0.998);
+  }
+
+  100% {
+    transform: skewY(0deg) scaleX(1);
+  }
+}
+
+@keyframes silkDrift {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  33% {
+    transform: translateX(6px) translateY(-10px) rotate(0.5deg);
+    opacity: 0.9;
+  }
+
+  66% {
+    transform: translateX(-4px) translateY(-6px) rotate(-0.3deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.015);
+    opacity: 1;
+  }
+}
+
+@keyframes gentleRipple {
+  0% {
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+  }
+
+  33% {
+    border-radius: 50% 50% 40% 60% / 55% 45% 55% 45%;
+  }
+
+  66% {
+    border-radius: 45% 55% 60% 40% / 45% 55% 50% 50%;
+  }
+
+  100% {
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+  }
+}
+
+.fabric-float {
+  animation: fabricFloat 7s ease-in-out infinite;
+}
+
+.fabric-wave {
+  animation: fabricWave 9s ease-in-out infinite;
+}
+
+.silk-drift {
+  animation: silkDrift 11s ease-in-out infinite;
+}
+
+.breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+.gentle-ripple {
+  animation: gentleRipple 12s ease-in-out infinite;
+}
+
+/* Staggered delays for layered fabric feel */
+.fabric-delay-1 {
+  animation-delay: 0.8s;
+}
+
+.fabric-delay-2 {
+  animation-delay: 1.8s;
+}
+
+.fabric-delay-3 {
+  animation-delay: 2.6s;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .fabric-float,
+  .fabric-wave,
+  .silk-drift,
+  .breathe,
+  .gentle-ripple,
+  .animate__animated {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fabric texture overlay */
+.fabric-texture {
+  position: relative;
+}
+
+.fabric-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.04) 3px,
+      rgba(255, 255, 255, 0.04) 4px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 3px,
+      rgba(255, 255, 255, 0.03) 4px);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
 @layer utilities {
   .bg-1 {
     background-image: url("../assets/images/backgrounds/bg-1.png");
   }
+
   .bg-2 {
     background-image: url("../assets/images/backgrounds/bg-2.png");
   }
+
   .bg-3 {
     background-image: url("../assets/images/backgrounds/bg-3.png");
   }
+
   .bg-4 {
-    background-image: url("../assets/images/backgrounds/bg-4.png");
+    background-image: url("../assets/images/backgrounds/bg-4.jpeg");
   }
+
   .bg-5 {
     background-image: url("../assets/images/backgrounds/bg-5.png");
   }
+
   .bg-6 {
     background-image: url("../assets/images/backgrounds/bg-6.png");
   }
+
   .footer-bg {
     background-image: url("../assets/images/backgrounds/footer.svg");
   }
+
   .service-container {
     min-height: calc(100vh - theme("spacing.20"));
   }
+
   .text-bg {
-    background: linear-gradient(
-      90deg,
-      rgba(248, 248, 248, 0.8) 0%,
-      rgba(248, 248, 248, 0) 100%
-    );
+    background: linear-gradient(270deg,
+        rgba(248, 244, 240, 0.9) 0%,
+        rgba(248, 244, 240, 0) 100%);
+  }
+
+  .linen-card {
+    background: linear-gradient(135deg, #f7f0ea 0%, #ede0d8 100%);
+  }
+
+  .sand-gradient {
+    background: linear-gradient(160deg, #fdfaf7 0%, #f0e6dc 50%, #e8ddd4 100%);
   }
 }
