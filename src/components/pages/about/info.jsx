@@ -1,26 +1,30 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 function Info() {
   return (
     <section className="flex flex-col md:flex-row bg-brown gap-12 items-center justify-center w-full md:px-24 md:py-24 pb-8">
-      {/* Fabric portrait panel — replace with real photo when available */}
+      {/* Portrait panel */}
       <div className="md:w-1/2 w-full animate__animated animate__zoomIn">
-        <div
-          className="breathe w-full aspect-[3/4] rounded-sm relative overflow-hidden"
-          style={{
-            background: "linear-gradient(160deg, #f7f0ea 0%, #e8ddd4 40%, #c9b8ae 80%, #a89890 100%)",
-          }}
-        >
+        <div className="breathe w-full aspect-[3/4] rounded-sm relative overflow-hidden">
+          <Image
+            src="/images/IMG_1299.JPG"
+            alt="صحرا حسینی"
+            fill
+            className="object-cover"
+            sizes="(max-width: 998px) 100vw, 50vw"
+            priority
+          />
           <div className="absolute inset-0 fabric-texture" />
           <div
             className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 rounded-full opacity-25 gentle-ripple"
             style={{ background: "radial-gradient(ellipse, #fdfaf7 0%, transparent 65%)" }}
           />
           {/* Subtle name watermark */}
-          <div className="absolute bottom-8 right-8 text-right">
-            <p className="text-white/40 font-Yeseva text-sm">صحرا حسینی</p>
-            <div className="w-8 h-0.5 bg-white/30 mt-1" />
+          <div className="absolute bottom-8 right-8 text-right z-10">
+            <p className="text-white/80 font-Yeseva text-sm drop-shadow-md">صحرا حسینی</p>
+            <div className="w-8 h-0.5 bg-white/60 mt-1" />
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ export default async function BlogPostPage({ params }) {
 
         <div className="font-jakarta text-base leading-9 text-black space-y-6">
           {paragraphs.map((para, i) => (
-            <p key={i} className="text-textmuted">
+            <p key={i} className="text-textmuted whitespace-pre-line">
               {para}
             </p>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import Image from "next/image";
 
 function Expect() {
   return (
@@ -13,20 +14,22 @@ function Expect() {
         {/* Fabric visual panel */}
         <div className="md:w-1/2 w-full">
           <AnimationOnScroll animateIn="animate__fadeIn" duration={1} animateOnce={true}>
-            <div
-              className="breathe w-full aspect-square rounded-sm relative overflow-hidden"
-              style={{
-                background: "linear-gradient(145deg, #f7f0ea 0%, #e8ddd4 40%, #c9b8ae 100%)",
-              }}
-            >
+            <div className="breathe w-full aspect-square rounded-sm relative overflow-hidden">
+              <Image
+                src="/images/IMG_1288.JPG"
+                alt="رویکرد ما"
+                fill
+                className="object-cover"
+                sizes="(max-width: 998px) 100vw, 50vw"
+              />
               {/* Fabric texture lines */}
               <div className="absolute inset-0 fabric-texture" />
               <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 rounded-full opacity-30 gentle-ripple"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 rounded-full opacity-20 gentle-ripple"
                 style={{ background: "radial-gradient(ellipse, #fdfaf7 0%, transparent 70%)" }}
               />
-              <div className="absolute bottom-8 right-8 w-16 h-0.5 bg-white/50" />
-              <div className="absolute bottom-12 right-8 w-10 h-0.5 bg-white/30" />
+              <div className="absolute bottom-8 right-8 w-16 h-0.5 bg-white/50 z-10" />
+              <div className="absolute bottom-12 right-8 w-10 h-0.5 bg-white/30 z-10" />
             </div>
           </AnimationOnScroll>
         </div>
