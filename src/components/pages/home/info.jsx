@@ -51,7 +51,7 @@ function Info() {
           {/* Left side: Image container (in RTL: displays on the left on desktop, top on mobile) */}
           <div className="md:w-2/5 w-full relative min-h-[30rem] md:min-h-auto">
             <Image
-              src="/images/IMG_1294.JPG"
+              src="/images/IMG_1294.jpeg"
               alt="صحرا تجسم"
               fill
               className="object-cover"

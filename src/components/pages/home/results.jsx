@@ -39,7 +39,7 @@ function Results() {
       {/* Right side: Image (in RTL: displays on the right on desktop, top on mobile) */}
       <div className="md:w-1/2 w-full relative min-h-[36rem] md:min-h-auto">
         <Image
-          src="/images/IMG_1257.JPG"
+          src="/images/IMG_1288.jpeg"
           alt="نتایج رویکرد"
           fill
           className="object-cover"

@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import newLogo from "@/assets/new-logo.png";
 import menuIcon from "@/assets/images/icons/menu.svg";
-import { usePathname } from "next/navigation";
+import {usePathname} from "next/navigation";
 import MobileHeader from "./mobileHeader";
 
 function Header() {
@@ -39,10 +39,13 @@ function Header() {
           scrolled
             ? "md:h-16 shadow-md bg-opacity-80 backdrop-blur-sm h-20"
             : "h-20"
-        } z-10 bg-white`}
+        } z-20 bg-white`}
       >
-          <div className="w-10/12 h-full hidden md:flex items-center justify-between">
-          <nav className="flex justify-center items-center gap-16 h-full font-jakarta" aria-label="منوی اصلی">
+        <div className="w-10/12 h-full hidden md:flex items-center justify-between">
+          <nav
+            className="flex justify-center items-center gap-16 h-full font-jakarta"
+            aria-label="منوی اصلی"
+          >
             <Link
               className={`text-sm ease-out duration-200 hover:text-cardbg ${
                 pathname === "/" ? "text-cardbg" : "text-black"
@@ -69,7 +72,10 @@ function Header() {
               alt="صحرا تجسم"
             />
           </div>
-          <nav className="flex justify-center items-center gap-16 h-full font-jakarta" aria-label="منوی اصلی">
+          <nav
+            className="flex justify-center items-center gap-16 h-full font-jakarta"
+            aria-label="منوی اصلی"
+          >
             <Link
               className={`text-sm ease-out duration-200 hover:text-cardbg ${
                 pathname === "/services" ? "text-cardbg" : "text-black"
@@ -98,10 +104,22 @@ function Header() {
         </div>
         <div className="w-full h-full md:hidden flex justify-between items-center">
           <button onClick={() => setMobileHeaderOpen(true)}>
-            <Image className="w-8 h-8" src={menuIcon} width={200} height={100} alt="منو" />
+            <Image
+              className="w-8 h-8"
+              src={menuIcon}
+              width={200}
+              height={100}
+              alt="منو"
+            />
           </button>
           <Link href="/">
-            <Image src={newLogo} width={160} height={60} alt="صحرا تجسم" className="object-contain" />
+            <Image
+              src={newLogo}
+              width={160}
+              height={60}
+              alt="صحرا تجسم"
+              className="object-contain"
+            />
           </Link>
         </div>
       </header>
