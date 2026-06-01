@@ -1,14 +1,41 @@
-import { posts } from "@/lib/blog";
+import {getAllPosts} from "@/lib/blog";
 
-const baseUrl = "https://sahra-embodiment.com";
+const baseUrl = "https://sahraembodiment.com";
 
-export default function sitemap() {
+export default async function sitemap() {
+  const posts = await getAllPosts();
+
   const staticPages = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const blogPages = posts.map((post) => ({

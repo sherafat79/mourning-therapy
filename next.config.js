@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const apiUrl = new URL(
+  process.env.API_URL || "https://api.sahraembodiment.com",
+);
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.sahraembodiment.com",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;

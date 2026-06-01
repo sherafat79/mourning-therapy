@@ -1,8 +1,10 @@
 "use client";
 import Input from "@/components/form/input";
 import { Field, Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
+
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 const iranianPhoneRegex = /^(\+98|0098|98|0)?9[0-9]{9}$/;
 
@@ -15,6 +17,18 @@ const validationSchema = Yup.object({
 });
 
 function ContactForm() {
+  const [status, setStatus] = useState("idle");
+  const [captcha, setCaptcha] = useState(null);
+
+  const loadCaptcha = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/contact/captcha`);
+      if (res.ok) setCaptcha(await res.json());
+    } catch {}
+  };
+
+  useEffect(() => { loadCaptcha(); }, []);
+
   return (
     <div className="py-6 px-9 rounded bg-cardbg">
       <Formik
@@ -25,13 +39,38 @@ function ContactForm() {
           email: "",
           contactMethod: "whatsapp",
           news: false,
+          captchaAnswer: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={() => {}}
+        onSubmit={async (values, { resetForm }) => {
+          if (!captcha) return;
+          setStatus("loading");
+          try {
+            const res = await fetch(`${API_BASE}/contact/`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: values.name,
+                lastname: values.lastname,
+                phone: values.phone,
+                email: values.email || null,
+                contact_method: values.contactMethod,
+                news: values.news,
+                captcha_token: captcha.token,
+                captcha_answer: values.captchaAnswer,
+              }),
+            });
+            if (!res.ok) throw new Error("خطا در ارسال");
+            setStatus("success");
+            resetForm();
+            loadCaptcha();
+          } catch {
+            setStatus("error");
+          }
+        }}
       >
-        {({ values }) => (
+        {() => (
           <Form className="flex flex-col gap-5">
-            {/* Name row */}
             <div className="w-full">
               <div className="md:w-1/2 w-full mb-5 md:mb-0 px-2 inline-block">
                 <Input name="name" placeholder="مثال: صحرا" text="نام" />
@@ -41,7 +80,6 @@ function ContactForm() {
               </div>
             </div>
 
-            {/* Phone */}
             <div className="w-full px-2">
               <Input
                 name="phone"
@@ -51,7 +89,6 @@ function ContactForm() {
               />
             </div>
 
-            {/* Email — optional */}
             <div className="w-full px-2">
               <Input
                 name="email"
@@ -61,7 +98,6 @@ function ContactForm() {
               />
             </div>
 
-            {/* Preferred contact method */}
             <div className="w-full px-2">
               <p className="text-xs text-black mb-3 font-medium">
                 ترجیح می‌دهید از چه طریقی با شما تماس گرفته شود؟
@@ -86,7 +122,6 @@ function ContactForm() {
               </div>
             </div>
 
-            {/* Newsletter checkbox */}
             <div className="flex items-center px-2 gap-2">
               <Field
                 id="news-checkbox"
@@ -100,11 +135,38 @@ function ContactForm() {
               </label>
             </div>
 
+            <div className="w-full px-2" dir="rtl">
+              <div className="flex items-center gap-3">
+                {captcha ? (
+                  <>
+                    <span className="text-lg font-bold bg-sand px-4 py-2 rounded select-none">
+                      {captcha.question}
+                    </span>
+                    <Field
+                      name="captchaAnswer"
+                      placeholder="پاسخ"
+                      className="w-24 p-2 text-sm border border-gray-300 rounded outline-none focus:border-brown"
+                    />
+                  </>
+                ) : (
+                  <span className="text-sm text-gray-400">در حال بارگذاری کد امنیتی...</span>
+                )}
+              </div>
+            </div>
+
+            {status === "success" && (
+              <p className="text-green-700 text-sm text-center">درخواست شما با موفقیت ثبت شد</p>
+            )}
+            {status === "error" && (
+              <p className="text-red-600 text-sm text-center">خطا در ارسال. لطفاً دوباره تلاش کنید</p>
+            )}
+
             <button
               type="submit"
-              className="font-jakarta hover:bg-line ease-out duration-200 p-3 font-medium text-sm rounded-sm bg-brown flex justify-center items-center w-full mx-auto mt-2"
+              disabled={status === "loading" || !captcha}
+              className="font-jakarta hover:bg-line ease-out duration-200 p-3 font-medium text-sm rounded-sm bg-brown flex justify-center items-center w-full mx-auto mt-2 disabled:opacity-50"
             >
-              ارسال درخواست
+              {status === "loading" ? "در حال ارسال..." : "ارسال درخواست"}
             </button>
           </Form>
         )}

@@ -5,18 +5,24 @@ function SideBar() {
   return (
     <aside className="md:w-1/5 w-full font-jakarta text-black bg-side flex flex-col gap-6 side px-10 py-14">
       <div>
-        <div className="w-6 h-0.5 bg-cardbg mb-4" />
+        <div className="w-6 h-0.5 text-right bg-cardbg mb-4" />
         <h3 className="font-bold text-base mb-3">تماس مستقیم</h3>
         <p className="text-sm text-textmuted leading-8 mb-4">
-          از طریق واتساپ یا تلگرام می‌توانید مستقیم پیام بدید.
+          برای تماس مستقیم با دکتر یا رزرو وقت، با شماره‌های زیر تماس بگیرید:
         </p>
-        <div className="flex flex-col gap-2">
-          <Link href="https://wa.me/" className="underline text-sm text-darkBrown">
-            واتساپ
-          </Link>
-          <Link href="https://t.me/" className="underline text-sm text-darkBrown">
-            تلگرام
-          </Link>
+        <div className="mb-3 flex flex-col gap-2 items-start text-right">
+          <div className="text-sm text-black">
+            <span className="font-bold">دکتر صحرا حسینی:</span>
+            <a href="tel:09131582544" className="underline ltr mx-2">
+              09131582544
+            </a>
+          </div>
+          <div className="text-sm text-black mt-1">
+            <span className="font-bold">تلفن رزرو وقت:</span>
+            <a href="tel:09385720172" className="underline mx-2">
+              09385720172
+            </a>
+          </div>
         </div>
         <hr className="text-line mt-5" />
       </div>
@@ -24,7 +30,8 @@ function SideBar() {
       <div>
         <h3 className="font-bold text-base mb-3">اولین قدم</h3>
         <p className="text-sm text-textmuted leading-8 mb-4">
-          یک گفت‌وگوی کوتاه برای آشنایی و بررسی اینکه این فضا برای شما مناسبه. بدون تعهد، بدون فشار.
+          یک گفت‌وگوی کوتاه برای آشنایی و بررسی اینکه این فضا برای شما مناسبه.
+          بدون تعهد، بدون فشار.
         </p>
         <hr className="text-line" />
       </div>
@@ -32,8 +39,10 @@ function SideBar() {
       <div>
         <h3 className="font-bold text-base mb-3">ساعات پاسخگویی</h3>
         <p className="text-sm text-textmuted leading-8">
-          شنبه تا چهارشنبه<br />
-          ۱۰ صبح تا ۷ عصر<br />
+          شنبه تا چهارشنبه
+          <br />
+          ۱۰ صبح تا ۷ عصر
+          <br />
           <span className="text-xs opacity-70">(به وقت تهران)</span>
         </p>
       </div>
@@ -43,6 +52,15 @@ function SideBar() {
         <h3 className="font-bold text-base mb-3">جلسات آنلاین</h3>
         <p className="text-sm text-textmuted leading-8">
           جلسات به‌صورت آنلاین برگزار می‌شوند و برای تمام ساکنان ایران در دسترس است.
+        </p>
+      </div>
+
+      <div>
+        <hr className="text-line mb-5" />
+        <h3 className="font-bold text-base mb-3">تعرفه جلسات</h3>
+        <p className="text-sm text-textmuted leading-8">
+          برای اطلاع از تعرفه جلسات،
+          <Link href="/contact" className="text-darkBrown underline mx-1">از طریق فرم تماس پیام بدید</Link>.
         </p>
       </div>
     </aside>
