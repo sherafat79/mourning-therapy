@@ -3,18 +3,21 @@ import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import Link from "next/link";
 import Image from "next/image";
+import { useI18n } from "@/i18n/provider";
 
 function Info() {
+  const { t, path } = useI18n();
+  const h = t.home.info;
   return (
     <section className="flex flex-col text-black md:justify-center justify-end items-center md:w-8/12 w-full mx-auto md:gap-16 gap-8">
       <div className="text-center px-4">
         <p className="text-xs tracking-widest text-cardbg mb-3 font-medium">
-          SAHRA EMBODIMENT
+          {h.eyebrow}
         </p>
         <h2 className="font-Yeseva text-2xl leading-relaxed">
-          ما به جای اصلاح سریع یا فشار برای تغییر،
+          {h.headingLine1}
           <br className="hidden md:block" />
-          با بدن، هیجان و تجربه‌ی زنده‌ی فرد کار می‌کنیم.
+          {h.headingLine2}
         </h2>
       </div>
 
@@ -32,18 +35,16 @@ function Info() {
             <div className="relative z-10 fabric-float">
               <div className="w-8 h-0.5 bg-cardbg mb-5" />
               <h3 className="font-Yeseva text-xl md:text-2xl leading-relaxed text-black mb-4">
-                صحرا تجسم، به رهبری صحرا حسینی — فضایی برای کار عمیق با خود.
+                {h.cardTitle}
               </h3>
               <p className="text-sm leading-8 font-jakarta text-textmuted">
-                صحرا حسینی، درمانگر بدن‌محور و هیجانی است که با رویکردی آرام و
-                غیرقضاوتی، همراه افرادی است که می‌خواهند از اضطراب، فرسودگی و
-                الگوهای تکراری رها شوند.
+                {h.cardText}
               </p>
               <Link
-                href="/about"
+                href={path("/about")}
                 className="font-jakarta hover:bg-line ease-out duration-200 leading-7 p-2.5 font-semibold mt-8 text-sm rounded-sm bg-brown text-black flex justify-center items-center md:w-1/2 w-full"
               >
-                بیشتر درباره صحرا حسینی
+                {h.cta}
               </Link>
             </div>
           </div>
@@ -52,7 +53,7 @@ function Info() {
           <div className="md:w-2/5 w-full relative min-h-[30rem] md:min-h-auto">
             <Image
               src="/images/IMG_1294.jpeg"
-              alt="صحرا تجسم"
+              alt={h.imageAlt}
               fill
               className="object-cover"
               sizes="(max-width: 998px) 100vw, 40vw"

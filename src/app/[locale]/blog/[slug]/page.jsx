@@ -1,32 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
 import {getAllPosts, getPostBySlug} from "@/lib/blog";
-import {notFound} from "next/navigation";
+import {redirect} from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {getDictionary} from "@/i18n/dictionaries";
+import {locales, localePath} from "@/i18n/config";
+import {pageAlternates} from "@/i18n/metadata";
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((p) => ({slug: p.slug}));
+  const perLocale = await Promise.all(
+    locales.map(async (locale) => {
+      const posts = await getAllPosts(undefined, locale);
+      return posts.map((p) => ({locale, slug: p.slug}));
+    }),
+  );
+  return perLocale.flat();
 }
 
 export async function generateMetadata({params}) {
-  const {slug} = await params;
-  const post = await getPostBySlug(slug);
+  const {locale, slug} = await params;
+  const post = await getPostBySlug(slug, locale);
   if (!post) return {};
   return {
-    title: `${post.title} | صحرا تجسم`,
+    title: post.title,
     description: post.body?.substring(0, 160) || "",
+    alternates: pageAlternates(locale, `/blog/${slug}`),
   };
 }
 
 export default async function BlogPostPage({params}) {
-  const {slug} = await params;
+  const {locale, slug} = await params;
+  const t = getDictionary(locale).blog;
   const [post, allPosts] = await Promise.all([
-    getPostBySlug(slug),
-    getAllPosts(6),
+    getPostBySlug(slug, locale),
+    getAllPosts(6, locale),
   ]);
-  if (!post) notFound();
+  // A post without an English translation has no English page: send readers to the article list.
+  if (!post) redirect(localePath(locale, "/blog"));
 
   const otherPosts = allPosts.filter((p) => p.slug !== slug);
 
@@ -48,13 +59,13 @@ export default async function BlogPostPage({params}) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
         <div className="relative text-center px-6">
           <p className="text-xs tracking-widest text-white/60 mb-3 font-medium">
-            BLOG
+            {t.eyebrow}
           </p>
           <h1 className="text-white font-Yeseva text-2xl md:text-[2rem] leading-relaxed drop-shadow-sm">
             {post.title}
           </h1>
           <p className="text-white/60 font-jakarta text-xs mt-3">
-            {post.readTime} مطالعه
+            {post.readTime} {t.readSuffix}
           </p>
         </div>
       </div>
@@ -93,14 +104,14 @@ export default async function BlogPostPage({params}) {
                 </a>
               ),
               ul: ({children}) => (
-                <ul className="list-disc pr-5 space-y-2 mb-4">{children}</ul>
+                <ul className="list-disc ps-5 space-y-2 mb-4">{children}</ul>
               ),
               ol: ({children}) => (
-                <ol className="list-decimal pr-5 space-y-2 mb-4">{children}</ol>
+                <ol className="list-decimal ps-5 space-y-2 mb-4">{children}</ol>
               ),
               li: ({children}) => <li className="leading-8">{children}</li>,
               blockquote: ({children}) => (
-                <blockquote className="border-r-4 border-darkBrown pr-4 mr-0 my-6 text-darkBrown italic">
+                <blockquote className="border-s-4 border-darkBrown ps-4 ms-0 my-6 text-darkBrown italic">
                   {children}
                 </blockquote>
               ),
@@ -128,22 +139,22 @@ export default async function BlogPostPage({params}) {
 
         <div className="text-center">
           <p className="font-Yeseva text-xl text-black mb-6">
-            اگر این مطلب با شما همراه شد، شاید وقتش باشد یک قدم بیشتر برداریم.
+            {t.ctaText}
           </p>
           <Link
-            href="/contact"
+            href={localePath(locale, "/contact")}
             className="font-jakarta hover:bg-line ease-out duration-200 leading-7 p-3 font-semibold text-sm rounded-sm bg-brown inline-flex justify-center items-center px-10"
           >
-            شروع مشاوره
+            {t.ctaButton}
           </Link>
         </div>
 
         <div className="mt-12 text-center">
           <Link
-            href="/blog"
+            href={localePath(locale, "/blog")}
             className="text-sm font-jakarta text-cardbg hover:text-darkBrown transition-colors duration-300"
           >
-            ← بازگشت به مقالات
+            {t.back}
           </Link>
         </div>
       </article>
@@ -151,18 +162,18 @@ export default async function BlogPostPage({params}) {
       <div className="bg-sand py-14 px-6">
         <div className="md:w-4/5 mx-auto">
           <p className="text-xs tracking-widest text-cardbg mb-6 font-medium text-center">
-            MORE ARTICLES
+            {t.moreEyebrow}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherPosts.length === 0 ? (
               <p className="text-center text-textmuted font-jakarta col-span-full">
-                مقاله دیگری موجود نیست.
+                {t.noOthers}
               </p>
             ) : (
               otherPosts.map((other) => (
                 <Link
                   key={other.slug}
-                  href={`/blog/${other.slug}`}
+                  href={localePath(locale, `/blog/${other.slug}`)}
                   className="group flex gap-4 items-start p-5 bg-white rounded-sm border border-line hover:border-cardbg transition-colors duration-300"
                 >
                   <div className="w-16 h-16 flex-shrink-0 rounded-sm relative overflow-hidden">
@@ -183,7 +194,7 @@ export default async function BlogPostPage({params}) {
                       {other.title}
                     </h3>
                     <span className="text-xs text-cardbg font-jakarta">
-                      {other.readTime} مطالعه
+                      {other.readTime} {t.readSuffix}
                     </span>
                   </div>
                 </Link>

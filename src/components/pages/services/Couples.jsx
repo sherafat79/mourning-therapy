@@ -1,23 +1,22 @@
+"use client";
 import React from "react";
+import Link from "next/link";
+import { useI18n } from "@/i18n/provider";
 
 function Couples() {
+  const { t, path } = useI18n();
+  const h = t.services;
   return (
     <>
-      <p>
-        تصمیم‌های مهم زندگی — رابطه، کار، جابه‌جایی — اغلب با الگوهای درونی و
-        واکنش‌های بدنی گره خورده‌اند که فقط با «فکر کردن» حل نمی‌شوند.
-      </p>
-      <p>
-        در این جلسات، همراه شما می‌شویم تا نه فقط با ذهن، بلکه با آگاهی از بدن و
-        هیجان هم به این تصمیم‌ها نزدیک شوید. این رویکرد کمک می‌کند انتخاب‌هایی
-        داشته باشید که واقعاً از درون شما می‌آیند.
-      </p>
+      {h.couples.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
       <p className="font-Yeseva font-normal text-base text-darkBrown">
-        برای اطلاع از تعرفه جلسات،
-        <a href="/contact" className="text-darkBrown underline mx-1">
-          از طریق فرم تماس پیام بدهید
-        </a>
-        .
+        {h.pricingBefore}
+        <Link href={path("/contact")} className="text-darkBrown underline mx-1">
+          {h.pricingLink}
+        </Link>
+        {h.pricingAfter}
       </p>
     </>
   );

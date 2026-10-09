@@ -11,8 +11,7 @@
 }
 
 body {
-  direction: rtl;
-  text-align: right;
+  text-align: start;
   background-color: #fdfaf7;
 }
 

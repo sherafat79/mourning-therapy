@@ -1,30 +1,22 @@
+"use client";
 import React from "react";
+import Link from "next/link";
+import { useI18n } from "@/i18n/provider";
 
 function Individual() {
+  const { t, path } = useI18n();
+  const h = t.services;
   return (
     <>
-      <p>
-        در جلسات فردی، صحرا محیطی امن، آرام و بدون قضاوت فراهم می‌کند که در آن
-        می‌توانید با تمام آنچه هستید حاضر باشید. هر جلسه متناسب با وضعیت و ظرفیت
-        شما در آن لحظه شکل می‌گیرد.
-      </p>
-      <p>
-        کار با اضطراب، فریز، فرسودگی — تنظیم هیجانی و بازسازی حس ایمنی در بدن.
-        لازم نیست از قبل تجربه کار بدن‌محور داشته باشید. شروع، آرام و متناسب با
-        ظرفیت هر فرد است.
-      </p>
-      <p>
-        جلسات به‌صورت گفت‌وگو، مشاهده بدن، تنظیم سیستم عصبی و تمرین‌های ساده
-        بدن‌محور پیش می‌روند. هدف این نیست که چیزی را به زور تغییر بدهیم؛ بلکه
-        کم‌کم فضایی ایجاد شود که بتوانید با امنیت بیشتری خودتان را ببینید و
-        احساس کنید.
-      </p>
+      {h.individual.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
       <p className="font-Yeseva font-normal text-base text-darkBrown">
-        برای اطلاع از تعرفه جلسات،
-        <a href="/contact" className="text-darkBrown underline mx-1">
-          از طریق فرم تماس پیام بدهید
-        </a>
-        .
+        {h.pricingBefore}
+        <Link href={path("/contact")} className="text-darkBrown underline mx-1">
+          {h.pricingLink}
+        </Link>
+        {h.pricingAfter}
       </p>
     </>
   );

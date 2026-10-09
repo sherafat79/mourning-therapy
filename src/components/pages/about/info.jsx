@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useI18n } from "@/i18n/provider";
 
 function Info() {
+  const { t } = useI18n();
+  const h = t.about;
   return (
     <section className="flex flex-col md:flex-row bg-brown gap-12 items-center justify-center w-full px-6 py-12 md:px-24 md:py-24">
       {/* Portrait panel */}
@@ -10,7 +13,7 @@ function Info() {
         <div className="breathe w-full aspect-[3/4] rounded-sm relative overflow-hidden">
           <Image
             src="/images/info.jpeg"
-            alt="صحرا حسینی"
+            alt={h.portraitAlt}
             fill
             className="object-cover"
             sizes="(max-width: 998px) 100vw, 50vw"
@@ -25,9 +28,9 @@ function Info() {
             }}
           />
           {/* Subtle name watermark */}
-          <div className="absolute bottom-8 right-8 text-right z-10">
+          <div className="absolute bottom-8 start-8 text-start z-10">
             <p className="text-white/80 font-Yeseva text-sm drop-shadow-md">
-              صحرا حسینی
+              {h.name}
             </p>
             <div className="w-8 h-0.5 bg-white/60 mt-1" />
           </div>
@@ -37,33 +40,17 @@ function Info() {
       <div className="md:w-1/2 text-sm font-jakarta leading-8 md:px-4">
         <div className="animate__fadeIn animate__animated">
           <p className="text-xs tracking-widest text-cardbg mb-4 font-medium">
-            ABOUT
+            {h.eyebrow}
           </p>
-          <h1 className="font-Yeseva text-center md:text-right font-normal leading-9 mb-6 text-[2rem]">
-            صحرا حسینی
+          <h1 className="font-Yeseva text-center md:text-start font-normal leading-9 mb-6 text-[2rem]">
+            {h.name}
           </h1>
-          <p className="text-textmuted">
-            من یک درمانگر بدن‌محور و هیجانی هستم. در کارم، به جای اصلاح سریع یا
-            فشار برای تغییر، با بدن، هیجان و تجربه‌ی زنده‌ی فرد کار می‌کنم.
-          </p>
-          <br />
-          <p className="text-textmuted">
-            اگر احساس می‌کنید مدام درگیر اضطراب، بی‌قراری، خستگی عاطفی، تکرار
-            رابطه‌های فرساینده یا فشارهایی هستید که فقط با فکر حل نمی‌شوند، این
-            فضا می‌تواند برای شما مفید باشد.
-          </p>
-          <br />
-          <p className="text-textmuted">
-            در این رویکرد فقط درباره مشکلات صحبت نمی‌کنیم؛ کم‌کم یاد می‌گیریم
-            واکنش‌های بدن، احساس امنیت، تنش، قطع شدن از خود و الگوهای عمیق‌تر را
-            هم ببینیم.
-          </p>
-          <br />
-          <p className="text-textmuted">
-            تغییر وقتی ماندگار است که از درون احساس امنیت شروع شود، نه از اجبار
-            ذهن. روند جلسات با توجه به وضعیت و ظرفیت هر فرد تنظیم می‌شود تا فشار
-            اضافه‌ای به سیستم عصبی وارد نشود.
-          </p>
+          {h.paragraphs.map((text, i) => (
+            <React.Fragment key={i}>
+              {i > 0 && <br />}
+              <p className="text-textmuted">{text}</p>
+            </React.Fragment>
+          ))}
           <div className="w-8 h-0.5 bg-cardbg mt-8" />
         </div>
       </div>

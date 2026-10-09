@@ -1,25 +1,28 @@
 import Link from "next/link";
 import React from "react";
+import { getDictionary } from "@/i18n/dictionaries";
+import { localePath } from "@/i18n/config";
 
-function SideBar() {
+function SideBar({ locale }) {
+  const t = getDictionary(locale).contact.sidebar;
   return (
     <aside className="md:w-1/5 w-full font-jakarta text-black bg-side flex flex-col gap-6 side px-10 py-14">
       <div>
-        <div className="w-6 h-0.5 text-right bg-cardbg mb-4" />
-        <h3 className="font-bold text-base mb-3">تماس مستقیم</h3>
+        <div className="w-6 h-0.5 text-start bg-cardbg mb-4" />
+        <h3 className="font-bold text-base mb-3">{t.directTitle}</h3>
         <p className="text-sm text-textmuted leading-8 mb-4">
-          برای تماس مستقیم با دکتر یا رزرو وقت، با شماره‌های زیر تماس بگیرید:
+          {t.directText}
         </p>
-        <div className="mb-3 flex flex-col gap-2 items-start text-right">
+        <div className="mb-3 flex flex-col gap-2 items-start text-start">
           <div className="text-sm text-black">
-            <span className="font-bold">دکتر صحرا حسینی:</span>
-            <a href="tel:09131582544" className="underline ltr mx-2">
+            <span className="font-bold">{t.doctorLabel}</span>
+            <a href="tel:09131582544" dir="ltr" className="underline ltr mx-2 inline-block">
               09131582544
             </a>
           </div>
           <div className="text-sm text-black mt-1">
-            <span className="font-bold">تلفن رزرو وقت:</span>
-            <a href="tel:09385720172" className="underline mx-2">
+            <span className="font-bold">{t.bookingLabel}</span>
+            <a href="tel:09385720172" dir="ltr" className="underline mx-2 inline-block">
               09385720172
             </a>
           </div>
@@ -28,39 +31,38 @@ function SideBar() {
       </div>
 
       <div>
-        <h3 className="font-bold text-base mb-3">اولین قدم</h3>
+        <h3 className="font-bold text-base mb-3">{t.firstStepTitle}</h3>
         <p className="text-sm text-textmuted leading-8 mb-4">
-          یک گفت‌وگوی کوتاه برای آشنایی و بررسی اینکه این فضا برای شما مناسبه.
-          بدون تعهد، بدون فشار.
+          {t.firstStepText}
         </p>
         <hr className="text-line" />
       </div>
 
       <div>
-        <h3 className="font-bold text-base mb-3">ساعات پاسخگویی</h3>
+        <h3 className="font-bold text-base mb-3">{t.hoursTitle}</h3>
         <p className="text-sm text-textmuted leading-8">
-          شنبه تا چهارشنبه
+          {t.hoursDays}
           <br />
-          ۱۰ صبح تا ۷ عصر
+          {t.hoursTime}
           <br />
-          <span className="text-xs opacity-70">(به وقت تهران)</span>
+          <span className="text-xs opacity-70">{t.hoursTimezone}</span>
         </p>
       </div>
 
       <div>
         <hr className="text-line mb-5" />
-        <h3 className="font-bold text-base mb-3">جلسات آنلاین</h3>
+        <h3 className="font-bold text-base mb-3">{t.onlineTitle}</h3>
         <p className="text-sm text-textmuted leading-8">
-          جلسات به‌صورت آنلاین برگزار می‌شوند و برای تمام ساکنان ایران در دسترس است.
+          {t.onlineText}
         </p>
       </div>
 
       <div>
         <hr className="text-line mb-5" />
-        <h3 className="font-bold text-base mb-3">تعرفه جلسات</h3>
+        <h3 className="font-bold text-base mb-3">{t.pricingTitle}</h3>
         <p className="text-sm text-textmuted leading-8">
-          برای اطلاع از تعرفه جلسات،
-          <Link href="/contact" className="text-darkBrown underline mx-1">از طریق فرم تماس پیام بدید</Link>.
+          {t.pricingBefore}
+          <Link href={localePath(locale, "/contact")} className="text-darkBrown underline mx-1">{t.pricingLink}</Link>{t.pricingAfter}
         </p>
       </div>
     </aside>

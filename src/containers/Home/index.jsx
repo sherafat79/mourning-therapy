@@ -14,22 +14,22 @@ import BlogPreview from "@/components/pages/home/blogPreview";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function HomeContainer() {
+export default function HomeContainer({ locale }) {
   return (
     <div className="flex flex-col md:pb-20 md:gap-[5.75rem] gap-12">
       <Hero />
       <Info />
-      <Services />
+      <Services locale={locale} />
       <OnlineTherapy />
       <Expect />
-      <Guiding />
+      <Guiding locale={locale} />
       <Customers />
       <Results />
       <Faq />
-      <Journey />
-      <Booking />
-      <BlogPreview />
-      <NewsLetter />
+      <Journey locale={locale} />
+      <Booking locale={locale} />
+      <BlogPreview locale={locale} />
+      <NewsLetter locale={locale} />
     </div>
   );
 }

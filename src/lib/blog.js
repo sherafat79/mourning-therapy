@@ -19,7 +19,9 @@ const PERSIAN_DIGITS = {
   9: "۹",
 };
 
-function formatReadTime(minutes) {
+// The "read" suffix ("مطالعه" / "read") is added by the page from the dictionary.
+function formatReadTime(minutes, locale) {
+  if (locale === "en") return `${minutes} min`;
   const persianNum = String(minutes)
     .split("")
     .map((d) => PERSIAN_DIGITS[d] || d)
@@ -27,44 +29,48 @@ function formatReadTime(minutes) {
   return `${persianNum} دقیقه`;
 }
 
-function formatDate(dateString) {
+function formatDate(dateString, locale) {
   const date = new Date(dateString);
-  return date.toLocaleDateString("fa-IR", {
+  return date.toLocaleDateString(locale === "en" ? "en-US" : "fa-IR", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 }
 
-function normalizeListItem(item) {
+function normalizeListItem(item, locale) {
   return {
     title: item.title,
     slug: item.slug,
     author: item.author,
-    readTime: formatReadTime(item.time_to_read),
+    readTime: formatReadTime(item.time_to_read, locale),
     thumbnail: normalizeBannerUrl(item.banner),
-    created_at: formatDate(item.created_at),
+    created_at: formatDate(item.created_at, locale),
   };
 }
 
-function normalizeDetail(item) {
+function normalizeDetail(item, locale) {
   return {
-    ...normalizeListItem(item),
+    ...normalizeListItem(item, locale),
     body: item.content,
   };
 }
 
-export async function getAllPosts(count) {
-  const url = count ? `${API_BASE_URL}/blogs/?count=${count}` : `${API_BASE_URL}/blogs/`;
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+// English listings only contain articles that have an English translation (the API filters them).
+export async function getAllPosts(count, locale = "fa") {
+  const params = new URLSearchParams({ lang: locale });
+  if (count) params.set("count", count);
+  const res = await fetch(`${API_BASE_URL}/blogs/?${params}`, { next: { revalidate: 3600 } });
   if (!res.ok) return [];
   const data = await res.json();
-  return data.map(normalizeListItem);
+  return data.map((item) => normalizeListItem(item, locale));
 }
 
-export async function getPostBySlug(slug) {
-  const res = await fetch(`${API_BASE_URL}/blogs/by-slug/${slug}/`, { next: { revalidate: 3600 } });
+export async function getPostBySlug(slug, locale = "fa") {
+  const res = await fetch(`${API_BASE_URL}/blogs/by-slug/${slug}/?lang=${locale}`, {
+    next: { revalidate: 3600 },
+  });
   if (!res.ok) return null;
   const data = await res.json();
-  return normalizeDetail(data);
+  return normalizeDetail(data, locale);
 }

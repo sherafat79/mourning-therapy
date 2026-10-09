@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function ServiceCard({ icon, title, content, link, href }) {
+function ServiceCard({ icon, title, content, link, href, iconAlt }) {
   return (
     <div className="bg-brown flex flex-col p-8 h-72 text-center rounded items-center ">
       <Image
@@ -10,7 +10,7 @@ function ServiceCard({ icon, title, content, link, href }) {
         width={64}
         height={64}
         className="w-16 mb-8 h-16"
-        alt={`آیکون ${title}`}
+        alt={iconAlt.replace("{title}", title)}
       />
       <h3 className="font-Yeseva text-base text-black mb-3">{title}</h3>
       <p className="font-jakarta text-sm font-medium leading-7">{content}</p>

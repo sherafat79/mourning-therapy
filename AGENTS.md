@@ -1,7 +1,7 @@
 # AGENTS.md — mourning-therapy
 
 ## Project overview
-Next.js 15 App Router (React 18), Persian RTL therapy/embodiment website. No TypeScript — plain JSX. No tests, no CI.
+Next.js 15 App Router (React 18), Bilingual (Persian RTL default + English LTR) therapy/embodiment website. No TypeScript — plain JSX. No tests, no CI.
 
 ## Commands
 | Command | Action |
@@ -45,3 +45,10 @@ Next.js 15 App Router (React 18), Persian RTL therapy/embodiment website. No Typ
 - Blog content is markdown rendered with `react-markdown` + `remark-gfm` (XSS-safe, no raw HTML passed through)
 - `next.config.js` has `images.remotePatterns` pointing to `API_URL` host for banner images
 - Home page passes `count=4` to API (`getAllPosts(4)`), blog pages get all posts (`getAllPosts()`)
+
+## i18n (fa / en)
+- Persian is the default and lives at `/…`; English lives at `/en/…`. `src/middleware.js` rewrites `/x` → `/fa/x` and 308-redirects `/fa/x` → `/x`. All pages are under `src/app/[locale]/`.
+- Strings live in `src/i18n/dictionaries/{fa,en}.js` (same shape — add keys to both). Server components call `getDictionary(locale)` (pass `locale` down as a prop); client components use `useI18n()` → `{ locale, t, path, rtl }`. Never import `dictionaries.js` from a client component.
+- Build internal links with `path("/x")` (client) or `localePath(locale, "/x")` (server) from `src/i18n/config.js`.
+- Layout is direction-aware: use logical Tailwind classes (`ms-`, `ps-`, `start-`, `end-`, `border-s`, `text-start`), not `mr-`/`pr-`/`right-`/`text-right`.
+- Blog API calls take a locale (`getAllPosts(count, locale)`, `getPostBySlug(slug, locale)`) and send `?lang=`. English lists only show articles that have an English translation; `/en/blog/<slug>` redirects to `/en/blog` when there is none.

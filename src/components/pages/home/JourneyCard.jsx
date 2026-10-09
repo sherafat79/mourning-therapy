@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function JourneyCard({ title, icon, description, link, href }) {
+function JourneyCard({ title, icon, description, link, href, iconAlt }) {
   return (
     <div className="flex text-center justify-center flex-col items-center">
       <Image
@@ -10,7 +10,7 @@ function JourneyCard({ title, icon, description, link, href }) {
         width={64}
         height={64}
         className="w-16 h-16 "
-        alt={`آیکون ${title}`}
+        alt={iconAlt.replace("{title}", title)}
       />
       <h3 className="text-base mt-9 font-Yeseva">{title}</h3>
       <p className="text-sm font-jakarta leading-7 font-medium mt-3">

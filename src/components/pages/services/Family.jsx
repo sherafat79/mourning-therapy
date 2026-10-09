@@ -1,25 +1,23 @@
+"use client";
 import React from "react";
+import Link from "next/link";
+import { useI18n } from "@/i18n/provider";
 
 function Family() {
+  const { t, path } = useI18n();
+  const h = t.services;
   return (
     <>
-      <p>
-        کار هیجانی و سوماتیک یعنی توجه به آنچه در بدن اتفاق می‌افتد — تنش، فریز،
-        بی‌حسی، یا احساس قطع شدن از خود — و کار با این واکنش‌ها به شیوه‌ای آرام
-        و تدریجی.
-      </p>
-      <p>
-        سیستم عصبی ما الگوهایی دارد که سال‌هاست شکل گرفته‌اند. این کار به شما
-        کمک می‌کند این الگوها را بشناسید، با آن‌ها کنار بیایید و کم‌کم فضایی
-        برای تغییر ایجاد کنید — بدون فشار، بدون اجبار.
-      </p>
-      <p>Emotional Regulation · Somatic Work · Nervous System Regulation</p>
+      {h.family.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
+      <p>{h.familyTags}</p>
       <p className="font-Yeseva font-normal text-base text-darkBrown">
-        برای اطلاع از تعرفه جلسات،
-        <a href="/contact" className="text-darkBrown underline mx-1">
-          از طریق فرم تماس پیام بدهید
-        </a>
-        .
+        {h.pricingBefore}
+        <Link href={path("/contact")} className="text-darkBrown underline mx-1">
+          {h.pricingLink}
+        </Link>
+        {h.pricingAfter}
       </p>
     </>
   );
