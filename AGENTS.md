@@ -52,3 +52,4 @@ Next.js 15 App Router (React 18), Bilingual (Persian RTL default + English LTR) 
 - Build internal links with `path("/x")` (client) or `localePath(locale, "/x")` (server) from `src/i18n/config.js`.
 - Layout is direction-aware: use logical Tailwind classes (`ms-`, `ps-`, `start-`, `end-`, `border-s`, `text-start`), not `mr-`/`pr-`/`right-`/`text-right`.
 - Blog API calls take a locale (`getAllPosts(count, locale)`, `getPostBySlug(slug, locale)`) and send `?lang=`. English lists only show articles that have an English translation; `/en/blog/<slug>` redirects to `/en/blog` when there is none.
+- Home testimonials come from the API (`getTestimonials(locale)` in `src/lib/testimonials.js`, editable in the admin); the copy in the dictionaries is only a fallback when the API returns none.

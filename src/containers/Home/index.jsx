@@ -11,10 +11,12 @@ import NewsLetter from "@/components/pages/home/newsletter";
 import Customers from "@/components/pages/home/customers";
 import Faq from "@/components/pages/home/faq";
 import BlogPreview from "@/components/pages/home/blogPreview";
+import { getTestimonials } from "@/lib/testimonials";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function HomeContainer({ locale }) {
+export default async function HomeContainer({ locale }) {
+  const testimonials = await getTestimonials(locale);
   return (
     <div className="flex flex-col md:pb-20 md:gap-[5.75rem] gap-12">
       <Hero />
@@ -23,7 +25,7 @@ export default function HomeContainer({ locale }) {
       <OnlineTherapy />
       <Expect />
       <Guiding locale={locale} />
-      <Customers />
+      <Customers items={testimonials} />
       <Results />
       <Faq />
       <Journey locale={locale} />

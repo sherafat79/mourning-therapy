@@ -8,7 +8,7 @@ import {Navigation, Pagination} from "swiper/modules";
 import "swiper/css/pagination";
 import { useI18n } from "@/i18n/provider";
 
-function Customers() {
+function Customers({ items }) {
   const { t, rtl } = useI18n();
   const h = t.home.testimonials;
   const sliderRef = useRef(null);
@@ -61,7 +61,7 @@ function Customers() {
             }}
             className="w-full pb-12 pt-4"
           >
-            {h.items.map((item, i) => (
+            {(items?.length ? items : h.items).map((item, i) => (
               <SwiperSlide key={i} className="h-auto">
                 <div className="bg-[#FAF7F4] border border-line/60 rounded-sm p-8 md:p-10 flex flex-col justify-between h-full min-h-[22rem] md:min-h-[20rem] shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
                   {/* Subtle corner gradient hover effect */}
